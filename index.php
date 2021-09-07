@@ -21,6 +21,8 @@
         : render('./views/404.php');
     if (str_contains($path, 'admin')) {
         include_once('./views/layouts/admin.php');
+    } else if (str_contains($path, 'login')) {
+        echo $layout_content;
     } else {
         include_once('./views/layouts/default.php');
     }
