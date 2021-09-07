@@ -20,33 +20,26 @@ class Database
 
     public function findAll(): array
     {
-        $sql = "select * from :tbl";
+        $sql = "select * from $this->_tbl";
         $stmt = $this->_pdo->prepare($sql);
-        $stmt->bindParam(':tbl', $this->_tbl);
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
     public function findById($id): array|null
     {
-        $sql = "select * from :tbl where :key = :id";
+        $sql = "select * from $this->_tbl where $this->_key = ?";
         $stmt = $this->_pdo->prepare($sql);
-        $stmt->bindParam(':tbl', $this->_tbl);
-        $stmt->bindParam(':key', $this->_key);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
+        $stmt->execute([$id]);
         $rs = $stmt->fetchAll();
         return $rs[0] ?? null;
     }
 
     public function delete($id)
     {
-        $sql = "delete from :tbl where :key = :id";
+        $sql = "delete from $this->_tbl where $this->_key = ?";
         $stmt = $this->_pdo->prepare($sql);
-        $stmt->bindParam(':tbl', $this->_tbl);
-        $stmt->bindParam(':key', $this->_key);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
+        $stmt->execute([$id]);
     }
 
     public function insert($data)
