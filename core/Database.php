@@ -18,21 +18,31 @@ class Database
         }
     }
 
-    public function findAll(): array
+    public function findAll(array $match_cond = null): array|false
     {
-        $sql = "select * from $this->_tbl";
+        $sql = "select * from $this->_tbl ";
+        $match_query = 'where 1=1 ';
+        if (isset($match_cond)) {
+            foreach ($match_cond as $k => $v) {
+                $match_query .= "and $k = ? ";
+            }
+        }
+        $sql .= $match_query;
         $stmt = $this->_pdo->prepare($sql);
-        $stmt->execute();
+        $params = [];
+        if (isset($match_cond)) {
+            $params = array_merge($params, array_values($match_cond));
+        }
+        $stmt->execute(empty($params) ? null : $params);
         return $stmt->fetchAll();
     }
 
-    public function findById($id): array|null
+    public function findById($id): mixed
     {
-        $sql = "select * from $this->_tbl where $this->_key = ?";
+        $sql = "select * from $this->_tbl where $this->_key = ? limit 1";
         $stmt = $this->_pdo->prepare($sql);
         $stmt->execute([$id]);
-        $rs = $stmt->fetchAll();
-        return $rs[0] ?? null;
+        return $stmt->fetch();
     }
 
     public function delete($id)
