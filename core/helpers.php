@@ -1,7 +1,7 @@
 <?php
 
 if (!function_exists('render')) {
-    function render($template)
+    function render($template): string
     {
         ob_start();
         include($template);
