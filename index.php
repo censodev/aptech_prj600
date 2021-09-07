@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    include_once('./helpers.php');
+    include_once('./core/helpers.php');
     $url = $_GET['url'] ?? 'home';
     $url = $url == 'admin' || $url == 'admin/' ? 'admin/home' : $url;
     $path = './views/' . $url . '.php';
