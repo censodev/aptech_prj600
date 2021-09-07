@@ -15,16 +15,16 @@
     include_once('./core/helpers.php');
     $url = $_GET['url'] ?? 'home';
     $url = $url == 'admin' || $url == 'admin/' ? 'admin/home' : $url;
-    $path = './views/' . $url . '.php';
-    $layout_content = file_exists($path)
-        ? render($path)
-        : render('./views/404.php');
-    if (str_contains($path, 'admin')) {
-        include_once('./views/layouts/admin.php');
-    } else if (str_contains($path, 'login')) {
+    $template = './views/' . $url . '.view.php';
+    $layout_content = file_exists($template)
+        ? render($template)
+        : render('./views/404.view.php');
+    if (str_contains($template, 'admin')) {
+        include_once('./views/layouts/admin.view.php');
+    } else if (str_contains($template, 'login')) {
         echo $layout_content;
     } else {
-        include_once('./views/layouts/default.php');
+        include_once('./views/layouts/default.view.php');
     }
     ?>
 </body>
