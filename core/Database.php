@@ -52,18 +52,16 @@ class Database
     public function insert($data)
     {
         $data_keys = array_keys($data);
+        $data_values = array_values($data);
         $keys = implode(',', $data_keys);
-        $data_alias_keys_ = array_map(function ($v) {
-            return ":$v";
+        $data_alias_keys = array_map(function () {
+            return "?";
         }, $data_keys);
-        $alias_keys = implode(',', $data_alias_keys_);
+        $alias_keys = implode(',', $data_alias_keys);
 
-        $sql = "insert into :tbl (:keys) values (:alias_keys)";
+        $sql = "insert into $this->_tbl ($keys) values ($alias_keys)";
         $stmt = $this->_pdo->prepare($sql);
-        $stmt->bindParam(':tbl', $this->_tbl);
-        $stmt->bindParam(':keys', $keys);
-        $stmt->bindParam(':alias_keys', $alias_keys);
-        $stmt->execute($data);
+        $stmt->execute($data_values);
     }
 
     public function update($id, $data)
@@ -76,12 +74,8 @@ class Database
         }
         $set = substr($set, 0, -1);
 
-        $sql = "update :tbl set :set WHERE :key = :id";
+        $sql = "update $this->_tbl set $set WHERE $this->_key = ?";
         $stmt = $this->_pdo->prepare($sql);
-        $stmt->bindParam(':tbl', $this->_tbl);
-        $stmt->bindParam(':key', $this->_key);
-        $stmt->bindParam(':id', $id);
-        $stmt->bindParam(':set', $set);
-        $stmt->execute($data_values);
+        $stmt->execute(array_merge($data_values, [$id]));
     }
 }
