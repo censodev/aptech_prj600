@@ -1,7 +1,8 @@
 <?php
 
-if (!function_exists('render')) {
-    function render($template): string
+class Helper
+{
+    public static function render($template): string
     {
         ob_start();
         include($template);
