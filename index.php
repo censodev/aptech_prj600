@@ -17,6 +17,7 @@
 <?php
 include_once 'core/bootstrap.php';
 
+session_start();
 $url = $_GET['url'] ?? 'home';
 $url = $url == 'admin' || $url == 'admin/' ? 'admin/home' : $url;
 $template = './views/' . $url . '.view.php';
