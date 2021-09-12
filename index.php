@@ -20,6 +20,10 @@ include_once 'core/bootstrap.php';
 session_start();
 $url = $_GET['url'] ?? 'home';
 $url = $url == 'admin' || $url == 'admin/' ? 'admin/home' : $url;
+if (str_contains($url, 'api')) {
+    include_once "./core/$url.php";
+    return;
+}
 $template = './views/' . $url . '.view.php';
 $layout_content = file_exists($template)
     ? Helper::render($template)
