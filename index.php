@@ -21,6 +21,7 @@ session_start();
 $url = $_GET['url'] ?? 'home';
 $url = $url == 'admin' || $url == 'admin/' ? 'admin/home' : $url;
 if (str_contains($url, 'api')) {
+    header('Content-Type: application/json; charset=utf-8');
     include_once "./core/$url.php";
     return;
 }
