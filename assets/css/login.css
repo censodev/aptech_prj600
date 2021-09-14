@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/covid-19_vaccine_kf9p6w.jpg);
+    background-size: cover;
+}
+
+.form-layout {
+    width: 38%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 31%;
+    transition: 0.3s;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 16px -3px #000000;
+    box-shadow: 0px 0px 16px -3px #000000;
+    padding: 0px 25px;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+form img {
+    width: 27%;
+    margin: 20px 0;
+}
+
+form div label {
+    width: 100%;
+    font-weight: 500;
+    color: #323232;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.phoneNumber-input {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.otpVerify-input {
+    width: 100%;
+    display: none;
+    transition: 0.2s;
+}
+
+.input-group {
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.input-group-text {
+    width: 50px;
+    justify-content: center;
+    font-size: 20px;
+    color: #323232;
+    border-radius: 12px;
+}
+
+.try-again {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.try-again:hover {
+    color: #025196;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    margin: 20px 0;
+    transition: 0.5s;
+}
+
+.form-control {
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 900px) {
+    .form-layout {
+        width: 100%;
+        height: 100vh;
+        position: unset;
+    }
+}
