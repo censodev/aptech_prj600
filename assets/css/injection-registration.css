@@ -1,0 +1,33 @@
+h4 {
+    text-transform: uppercase;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container input {
+    border-radius: 8px;
+}
+
+.personal-infor {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.btn-group {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-submit {
+    width: auto;
+}
+
+.btn {
+    width: 160px;
+    margin: 20px;
+    border-radius: 16px;
+}
