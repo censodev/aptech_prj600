@@ -1,0 +1,52 @@
+.create-new-injection {
+    background-color: #baebee;
+    padding: 30px;
+    text-align: center;
+}
+
+.card-layout{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-title {
+    color: #222222;
+}
+
+.person-infor {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.person-infor .title {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.person-infor .title p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #505050;
+}
+
+.person-infor .infor {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 0 0 15px;
+}
+
+.person-infor .infor p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #323232;
+}
+
