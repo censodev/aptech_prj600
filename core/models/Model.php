@@ -1,15 +1,22 @@
 <?php
 
-class Database
+abstract class Model
 {
     private PDO $_pdo;
     private string $_key;
     private string $_tbl;
 
-    public function __construct(string $table, string $key = 'id')
+    protected abstract function getTable(): string;
+
+    protected function getKey(): string
     {
-        $this->_key = $key;
-        $this->_tbl = $table;
+        return 'id';
+    }
+
+    public function __construct()
+    {
+        $this->_key = $this->getKey();
+        $this->_tbl = $this->getTable();
         try {
             $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME;
             $this->_pdo = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
