@@ -3,25 +3,27 @@ include_once 'core/bootstrap.php';
 
 session_start();
 
-$url = $_GET['url'] ?? 'home';
-$url = $url == 'admin' || $url == 'admin/' ? 'admin/home' : $url;
+$route = $_GET['url'] ?? 'home';
+$route = $route == 'admin' || $route == 'admin/' ? 'admin/home' : $route;
 
-if (str_contains($url, 'api')) {
+// API
+if (str_contains($route, 'api')) {
     header('Content-Type: application/json; charset=utf-8');
-    include_once "./core/$url.php";
+    include_once "./core/$route.php";
     return;
 }
 
-$template = './views/' . $url . '.view.php';
+// MVC
+$controller = "./core/controllers/$route.controller.php";
 
-if (file_exists($template)) {
-    $layout_content = Helper::render($template);
-} else {
+if (!file_exists($controller)) {
     echo '404 Page not found';
-    die;
+    return;
 }
 
-if (str_contains($template, 'admin')) {
+$layout_content = Helper::load($controller);
+
+if (str_contains($controller, 'admin')) {
     include_once('./views/layouts/admin.view.php');
 } else {
     include_once('./views/layouts/default.view.php');

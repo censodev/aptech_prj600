@@ -2,7 +2,7 @@
 
 class Helper
 {
-    public static function render($template): string
+    public static function load($template): string
     {
         ob_start();
         include($template);
@@ -59,5 +59,10 @@ class Helper
         } else {
             header('Location: ' . self::url('login'));
         }
+    }
+
+    public static function view(string $view): void
+    {
+        include_once "views/$view.view.php";
     }
 }
