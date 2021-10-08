@@ -10,4 +10,13 @@ class Helper
         ob_end_clean();
         return $ret;
     }
+
+    public static function url(string $uri): string {
+        $host = APP_HOST;
+        $port = APP_PORT;
+        $context_path = APP_CONTEXT_PATH;
+        return empty($context_path)
+                ? "http://$host:$port/$uri"
+                : "http://$host:$port/$context_path/$uri";
+    }
 }

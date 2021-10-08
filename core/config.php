@@ -5,3 +5,7 @@ const DB_PORT = '3306';
 const DB_NAME = 'vms';
 const DB_USERNAME = 'admin';
 const DB_PASSWORD = 'Phuong0964603264';
+
+const APP_HOST = 'localhost';
+const APP_PORT = '88';
+const APP_CONTEXT_PATH = 'vms';
