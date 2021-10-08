@@ -18,6 +18,7 @@
             >
                 + Đăng ký mũi tiêm mới
             </a>
+            <a href="<?php echo Helper::url('logout') ?>">Đăng xuất</a>
         </div>
     </div>
     <div class="container card-layout">

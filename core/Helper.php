@@ -55,14 +55,24 @@ class Helper
     public static function redirectLogin(): void
     {
         if (str_contains($_GET['url'], 'admin')) {
-            header('Location: ' . self::url('admin/login'));
+            self::redirect('admin/login');
         } else {
-            header('Location: ' . self::url('login'));
+            self::redirect('login');
         }
+    }
+
+    public static function redirect(string $uri): void
+    {
+        header('Location: ' . self::url($uri));
     }
 
     public static function view(string $view): void
     {
         include_once "views/$view.view.php";
+    }
+
+    public static function session(string $key): mixed
+    {
+        return $_SESSION[$key];
     }
 }

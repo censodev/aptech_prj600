@@ -67,10 +67,10 @@ $navbar = [
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
                                data-bs-toggle="dropdown">
-                                <span class="text-dark">Charles Hall</span>
+                                <span class="text-dark"><?php echo Helper::session('phone') ?></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1"
+                                <a class="dropdown-item" href="<?php echo Helper::url('admin/logout') ?>"><i class="align-middle me-1"
                                                                      data-feather="log-out"></i> Đăng xuất</a>
                             </div>
                         </li>
