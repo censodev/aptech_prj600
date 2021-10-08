@@ -89,11 +89,11 @@
         const otp = document.querySelector("#otpCode").value;
         try {
             await window.confirmationResult.confirm(otp)
-            const res = await fetch(`api/login-otp?phone=${document.querySelector("#phoneNumber").value}`)
-            const data = await res.json();
-            console.log(data)
+            await fetch(`api/login-otp?phone=${document.querySelector("#phoneNumber").value}`)
+            location.href = "<?php echo Helper::url('') ?>"
         } catch (e) {
             console.log(e)
+            alert('Đăng nhập không thành công')
         }
     })
 
