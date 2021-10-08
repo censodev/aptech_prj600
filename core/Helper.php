@@ -11,12 +11,18 @@ class Helper
         return $ret;
     }
 
-    public static function url(string $uri): string {
+    public static function url(string $uri): string
+    {
         $host = APP_HOST;
         $port = APP_PORT;
         $context_path = APP_CONTEXT_PATH;
         return empty($context_path)
-                ? "http://$host:$port/$uri"
-                : "http://$host:$port/$context_path/$uri";
+            ? "http://$host:$port/$uri"
+            : "http://$host:$port/$context_path/$uri";
+    }
+
+    public static function assets(string $uri): string
+    {
+        return self::url("assets/$uri");
     }
 }
