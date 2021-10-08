@@ -1,3 +1,6 @@
+<?php
+Helper::authGuard();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

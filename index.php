@@ -17,6 +17,7 @@ $template = './views/' . $url . '.view.php';
 if (file_exists($template)) {
     $layout_content = Helper::render($template);
 } else {
+    echo '404 Page not found';
     die;
 }
 
