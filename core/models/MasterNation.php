@@ -4,6 +4,6 @@ class MasterNation extends Model
 {
     protected function getTable(): string
     {
-        return 'master_nations';
+        return 'master_nation';
     }
 }

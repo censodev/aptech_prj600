@@ -4,6 +4,6 @@ class MasterCountry extends Model
 {
     protected function getTable(): string
     {
-        return 'master_countries';
+        return 'master_country';
     }
 }

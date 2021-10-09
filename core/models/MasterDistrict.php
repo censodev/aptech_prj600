@@ -4,6 +4,6 @@ class MasterDistrict extends Model
 {
     protected function getTable(): string
     {
-        return 'master_districts';
+        return 'master_district';
     }
 }

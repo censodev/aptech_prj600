@@ -4,6 +4,6 @@ class MasterProvince extends Model
 {
     protected function getTable(): string
     {
-        return 'master_provinces';
+        return 'master_province';
     }
 }

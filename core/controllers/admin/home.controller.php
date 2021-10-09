@@ -1,6 +1,4 @@
 <?php
-// lấy từ db
-$arr = [
-    'name' => 'Phuong',
-];
+$country = new MasterCountry();
+$arr = $country->findAll(['name' => 'Viet Nam']);
 include_once Helper::view('admin/home');
