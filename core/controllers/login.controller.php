@@ -1,2 +1,2 @@
 <?php
-Helper::view('login');
+include_once Helper::view('login');

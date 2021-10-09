@@ -1,2 +1,2 @@
 <?php
-Helper::view('injection-registration');
+include_once Helper::view('injection-registration');

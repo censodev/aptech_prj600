@@ -5,4 +5,4 @@ if (count($_POST) > 0) {
     $_SESSION['isAdmin'] = true;
     Helper::redirect('admin');
 }
-Helper::view('admin/login');
+include_once Helper::view('admin/login');

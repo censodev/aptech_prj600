@@ -1,2 +1,2 @@
 <?php
-Helper::view('home');
+include_once Helper::view('home');

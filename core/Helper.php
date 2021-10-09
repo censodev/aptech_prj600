@@ -66,9 +66,9 @@ class Helper
         header('Location: ' . self::url($uri));
     }
 
-    public static function view(string $view): void
+    public static function view(string $view): string
     {
-        include_once "views/$view.view.php";
+        return "views/$view.view.php";
     }
 
     public static function session(string $key): mixed
