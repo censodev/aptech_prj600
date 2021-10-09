@@ -2,7 +2,7 @@
 
 abstract class Model
 {
-    private PDO $_pdo;
+    protected PDO $_pdo;
     private string $_key;
     private string $_tbl;
 
