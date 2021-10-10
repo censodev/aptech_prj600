@@ -25,6 +25,12 @@ abstract class Model
         }
     }
 
+    public function findOne(array $match_cond = null): array|null
+    {
+        $rs = $this->findAll($match_cond);
+        return count($rs) > 0 ? $rs[0] : null;
+    }
+
     public function findAll(array $match_cond = null): array|false
     {
         $sql = "select * from $this->_tbl ";

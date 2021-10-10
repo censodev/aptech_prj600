@@ -26,6 +26,14 @@ $navbar = [
 
     <title>VMS | Admin</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link href="<?php echo Helper::assets('css/app.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -70,8 +78,9 @@ $navbar = [
                                 <span class="text-dark"><?php echo Helper::session('phone') ?></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="<?php echo Helper::url('admin/logout') ?>"><i class="align-middle me-1"
-                                                                     data-feather="log-out"></i> Đăng xuất</a>
+                                <a class="dropdown-item" href="<?php echo Helper::url('admin/logout') ?>"><i
+                                            class="align-middle me-1"
+                                            data-feather="log-out"></i> Đăng xuất</a>
                             </div>
                         </li>
                     </ul>

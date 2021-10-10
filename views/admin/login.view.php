@@ -35,3 +35,12 @@
         </div>
     </div>
 </main>
+<?php if (isset($err)): ?>
+    <script>
+        Swal.fire({
+            title: 'Đăng nhập thất bại',
+            text: '<?php echo $err ?>',
+            icon: 'error',
+        })
+    </script>
+<?php endif; ?>

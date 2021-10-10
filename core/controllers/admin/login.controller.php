@@ -1,8 +1,13 @@
 <?php
 if (count($_POST) > 0) {
-    // TODO: check DB -> ...
-    $_SESSION['phone'] = $_POST['phone'];
-    $_SESSION['isAdmin'] = true;
-    Helper::redirect('admin');
+    $user = new User();
+    $u = $user->findOne(['phone' => $_POST['phone']]);
+    if (!isset($u) || !password_verify($_POST['password'], $u['password'])) {
+        $err = ('Vui lòng kiểm tra lại số điện thoại hoặc mật khẩu');
+    } else {
+        $_SESSION['phone'] = $u['phone'];
+        $_SESSION['isAdmin'] = true;
+        Helper::redirect('admin');
+    }
 }
 include_once Helper::view('admin/login');
