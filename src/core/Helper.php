@@ -75,4 +75,15 @@ class Helper
     {
         return $_SESSION[$key];
     }
+
+    public static function seed(Model $model, array $data): bool
+    {
+        if (count($model->findAll()) > 0) {
+            return false;
+        }
+        foreach ($data as $v) {
+            $model->insert($v);
+        }
+        return true;
+    }
 }
