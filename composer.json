@@ -1,0 +1,15 @@
+{
+    "name": "buiph/vms",
+    "autoload": {
+        "psr-4": {
+            "Buiph\\Vms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Phuong Bui",
+            "email": "buiphuongaptutc@gmail.com"
+        }
+    ],
+    "require": {}
+}

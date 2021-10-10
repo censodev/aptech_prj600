@@ -1,5 +1,6 @@
 <?php
-include_once 'core/bootstrap.php';
+include_once 'vendor/autoload.php';
+include_once 'src/core/bootstrap.php';
 
 session_start();
 
@@ -9,12 +10,12 @@ $route = $route == 'admin' || $route == 'admin/' ? 'admin/home' : $route;
 // API
 if (str_contains($route, 'api')) {
     header('Content-Type: application/json; charset=utf-8');
-    include_once "./core/$route.php";
+    include_once "src/core/$route.php";
     return;
 }
 
 // MVC
-$controller = "./core/controllers/$route.controller.php";
+$controller = "src/core/controllers/$route.controller.php";
 
 if (!file_exists($controller)) {
     echo '404 Page not found';
@@ -24,8 +25,8 @@ if (!file_exists($controller)) {
 $layout_content = Helper::load($controller);
 
 if (str_contains($controller, 'admin')) {
-    include_once('./views/layouts/admin.view.php');
+    include_once('src/views/layouts/admin.view.php');
 } else {
-    include_once('./views/layouts/default.view.php');
+    include_once('src/views/layouts/default.view.php');
 }
 ?>

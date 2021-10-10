@@ -68,7 +68,7 @@ class Helper
 
     public static function view(string $view): string
     {
-        return "views/$view.view.php";
+        return "src/views/$view.view.php";
     }
 
     public static function session(string $key): mixed
