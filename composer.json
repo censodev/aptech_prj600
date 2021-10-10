@@ -11,5 +11,7 @@
             "email": "buiphuongaptutc@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "endroid/qr-code": "^4.3"
+    }
 }

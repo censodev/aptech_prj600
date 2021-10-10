@@ -1,6 +1,6 @@
 <?php
 include_once 'vendor/autoload.php';
-include_once 'src/core/bootstrap.php';
+include_once 'src/core/autoload.php';
 
 session_start();
 
