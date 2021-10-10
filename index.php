@@ -10,7 +10,7 @@ $route = $route == 'admin' || $route == 'admin/' ? 'admin/home' : $route;
 // API
 if (str_contains($route, 'api')) {
     header('Content-Type: application/json; charset=utf-8');
-    include_once "src/core/$route.php";
+    include_once "src/core/$route.api.php";
     return;
 }
 
