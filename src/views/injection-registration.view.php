@@ -1,6 +1,6 @@
 <!-- <?php echo "injection registration" ?> -->
 
-<link rel="stylesheet" href="assets/css/injection-registration.css" />
+<link rel="stylesheet" href="<?php echo Helper::assets("css/injection-registration.css") ?>" />
 <div class="container">
       <div class="title">
         <h4>Đăng ký mũi tiêm mới</h4>

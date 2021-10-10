@@ -8,7 +8,7 @@
 section {
     width: 100%;
     height: 100vh;
-    background-image: url('assets/img/covid-19_vaccine_kf9p6w.jpg');
+    background-image: url(../img/covid-19_vaccine_kf9p6w.jpg);
     background-size: cover;
 }
 
