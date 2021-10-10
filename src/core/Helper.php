@@ -23,7 +23,7 @@ class Helper
 
     public static function assets(string $uri): string
     {
-        return self::url("assets/$uri");
+        return self::url("src/assets/$uri");
     }
 
     public static function isAuthorized(): bool
