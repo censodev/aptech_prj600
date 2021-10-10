@@ -8,10 +8,6 @@ h4 {
     padding: 20px 0;
 }
 
-.container input {
-    border-radius: 8px;
-}
-
 .personal-infor {
     font-weight: 600;
     font-size: 22px;
@@ -29,5 +25,4 @@ h4 {
 .btn {
     width: 160px;
     margin: 20px;
-    border-radius: 16px;
 }

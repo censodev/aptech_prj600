@@ -1,6 +1,6 @@
 <!-- <?php echo "registered injections"?> -->
 
-<link rel="stylesheet" href="assets/css/registered-injections.css" />
+<link rel="stylesheet" href="<?php echo Helper::assets("css/registered-injections.css") ?>" />
 <div class="wrap">
     <div class="create-new-injection">
         <div class="container center">

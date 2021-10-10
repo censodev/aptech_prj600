@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="assets/css/login.css" />
+<link rel="stylesheet" href="<?php echo Helper::assets("css/login.css") ?>" />
 <section>
   <div class="container d-flex justify-content-center py-5">
     <div class="form-layout text-center">
       <form method="post" id="frmLogin">
         <img
-          src="assets/img/9d8ed5_651b6cb038ff4917bcdbe0c58ca2c241_mv2.png"
+          src="<?php echo Helper::assets("img/9d8ed5_651b6cb038ff4917bcdbe0c58ca2c241_mv2.png")?>"
           alt=""
           srcset=""
         />
