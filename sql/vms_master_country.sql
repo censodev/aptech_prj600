@@ -1,262 +1,251 @@
-create table master_country
-(
-    id   int                       not null,
-    code varchar(10) charset utf8  null,
-    name varchar(100) charset utf8 null,
-    constraint master_country_id_uindex
-        unique (id)
-);
-
-alter table master_country
-    add primary key (id);
-
-INSERT INTO vms.master_country (id, code, name) VALUES (100001, 'VN', 'Viet Nam');
-INSERT INTO vms.master_country (id, code, name) VALUES (100002, 'AF', 'Cộng hòa Hồi giáo Ápganixtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100003, 'AX', 'Đảo Aland');
-INSERT INTO vms.master_country (id, code, name) VALUES (100004, 'AL', 'Cộng hòa Anbani');
-INSERT INTO vms.master_country (id, code, name) VALUES (100005, 'DZ', 'Cộng hòa dân chủ nhân dân Angiêri');
-INSERT INTO vms.master_country (id, code, name) VALUES (100006, 'AS', 'Xamoa Châu Mỹ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100007, 'AD', 'Công quốc Anđôra');
-INSERT INTO vms.master_country (id, code, name) VALUES (100008, 'AO', 'Cộng hòa ănggôla');
-INSERT INTO vms.master_country (id, code, name) VALUES (100009, 'AI', 'Ăngguyla');
-INSERT INTO vms.master_country (id, code, name) VALUES (100010, 'AQ', 'Nam Cực');
-INSERT INTO vms.master_country (id, code, name) VALUES (100011, 'AG', 'Ăngtigoa vµ bácbuđa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100012, 'AR', 'Cộng hòa áchentina');
-INSERT INTO vms.master_country (id, code, name) VALUES (100013, 'AM', 'Cộng hòa ácmênia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100014, 'AW', 'Aruba');
-INSERT INTO vms.master_country (id, code, name) VALUES (100015, 'AU', 'Ôxtrâylia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100016, 'AT', 'Cộng hòa áo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100017, 'AZ', 'Cộng hòa Adécbaigian');
-INSERT INTO vms.master_country (id, code, name) VALUES (100018, 'BS', 'Cộng đồng các đảo Bahamát');
-INSERT INTO vms.master_country (id, code, name) VALUES (100019, 'BH', 'Vương quốc Bơhrên');
-INSERT INTO vms.master_country (id, code, name) VALUES (100020, 'BD', 'Cộng hòa nhân dân Bănglađét');
-INSERT INTO vms.master_country (id, code, name) VALUES (100021, 'BB', 'Bácbađốt');
-INSERT INTO vms.master_country (id, code, name) VALUES (100022, 'BY', 'Cộng hòa Bêlarút');
-INSERT INTO vms.master_country (id, code, name) VALUES (100023, 'BE', 'Vương quốc Bỉ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100024, 'BZ', 'Bêlixê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100025, 'BJ', 'Cộng hòa Bênanh');
-INSERT INTO vms.master_country (id, code, name) VALUES (100026, 'BM', 'Bécmuda');
-INSERT INTO vms.master_country (id, code, name) VALUES (100027, 'BT', 'Vương quốc Butan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100028, 'BO', 'Cộng hòa Bôlivia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100029, 'BA', 'Bôxnia và Hécxegôvina');
-INSERT INTO vms.master_country (id, code, name) VALUES (100030, 'BW', 'Cộng hòa Bốtxoana');
-INSERT INTO vms.master_country (id, code, name) VALUES (100031, 'BV', 'Đảo Buvê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100032, 'BR', 'Cộng hòa Liên bang Braxin');
-INSERT INTO vms.master_country (id, code, name) VALUES (100033, 'VG', 'Quần đảo Viếcgina thuộc Anh');
-INSERT INTO vms.master_country (id, code, name) VALUES (100034, 'IO', 'Vùng ấn Độ Dương thuộc Anh');
-INSERT INTO vms.master_country (id, code, name) VALUES (100035, 'BN', 'Brunây Đarussalam');
-INSERT INTO vms.master_country (id, code, name) VALUES (100036, 'BG', 'Cộng hòa Bungari');
-INSERT INTO vms.master_country (id, code, name) VALUES (100037, 'BF', 'Buốckina Phaxô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100038, 'BI', 'Cộng hòa Burunđi');
-INSERT INTO vms.master_country (id, code, name) VALUES (100039, 'KH', 'Vương quốc Campuchia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100040, 'CM', 'Cộng hòa Camdrun');
-INSERT INTO vms.master_country (id, code, name) VALUES (100041, 'CA', 'Canađa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100042, 'CV', 'Cộng hòa Cáp Ve');
-INSERT INTO vms.master_country (id, code, name) VALUES (100043, 'KY', 'Quần đảo Câymơn');
-INSERT INTO vms.master_country (id, code, name) VALUES (100044, 'CF', 'Cộng hòa Trung Phi');
-INSERT INTO vms.master_country (id, code, name) VALUES (100045, 'TD', 'Cộng hòa Sát');
-INSERT INTO vms.master_country (id, code, name) VALUES (100046, 'CL', 'Cộng hòa Chilê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100047, 'CN', 'Cộng hòa nhân dân Trung Hoa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100048, 'HK', 'Đặc khu hành chính Hồng Kông thuộcTrung Quốc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100049, 'MO', 'Đặc khu hành chính Macao của Trung Quốc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100050, 'CX', 'Đảo Krixtêmớt');
-INSERT INTO vms.master_country (id, code, name) VALUES (100051, 'CC', 'Quần đảo Cốt');
-INSERT INTO vms.master_country (id, code, name) VALUES (100052, 'CO', 'Cộng hòa Côlômbia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100053, 'KM', 'Liên Minh Cômo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100054, 'CG', 'Cộng hòa Cônggô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100055, 'CD', 'Cộng hòa dân chủ Cônggô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100056, 'CK', 'Quần đảo Cook');
-INSERT INTO vms.master_country (id, code, name) VALUES (100057, 'CR', 'Cộng hòa C«xta Rica');
-INSERT INTO vms.master_country (id, code, name) VALUES (100058, 'HR', 'Cộng hòa Crôatia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100059, 'CU', 'Cộng hòa Cuba');
-INSERT INTO vms.master_country (id, code, name) VALUES (100060, 'CY', 'Cộng hòa Síp');
-INSERT INTO vms.master_country (id, code, name) VALUES (100061, 'CZ', 'Cộng hòa Séc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100062, 'DK', 'Vương quốc Đan Mạch');
-INSERT INTO vms.master_country (id, code, name) VALUES (100063, 'DJ', 'Cộng hòa Gibuti');
-INSERT INTO vms.master_country (id, code, name) VALUES (100064, 'DM', 'Khối thịnh vượng chung Đôminica');
-INSERT INTO vms.master_country (id, code, name) VALUES (100065, 'DO', 'Cộng hòa Đôminica');
-INSERT INTO vms.master_country (id, code, name) VALUES (100066, 'EC', 'Cộng hòa Êcuađo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100067, 'EG', 'Cộng hòa ả rập Ai Cập');
-INSERT INTO vms.master_country (id, code, name) VALUES (100068, 'SV', 'Cộng hòa En Xanvađo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100069, 'GQ', 'Cộng hòa Ghinê Xích đạo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100070, 'ER', 'Êritơria');
-INSERT INTO vms.master_country (id, code, name) VALUES (100071, 'EE', 'Cộng hòa Extônia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100072, 'ET', 'Cộng hòa dân chủ liên bang Êtiôpia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100073, 'FK', 'Quần đảo Phoóclen(Manvina)');
-INSERT INTO vms.master_country (id, code, name) VALUES (100074, 'FO', 'Đảo Pharâu');
-INSERT INTO vms.master_country (id, code, name) VALUES (100075, 'FJ', 'Cộng hòa quần đảo Fiji');
-INSERT INTO vms.master_country (id, code, name) VALUES (100076, 'FI', 'Cộng hòa Phần Lan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100077, 'FR', 'Cộng hòa Pháp');
-INSERT INTO vms.master_country (id, code, name) VALUES (100078, 'GF', 'Guyanna thuộc Pháp');
-INSERT INTO vms.master_country (id, code, name) VALUES (100079, 'PF', 'Pôlinêxia thuộc Pháp');
-INSERT INTO vms.master_country (id, code, name) VALUES (100080, 'TF', 'Lãnh thổ thuộc Pháp phía Nam');
-INSERT INTO vms.master_country (id, code, name) VALUES (100081, 'GA', 'Cộng hòa Gabông');
-INSERT INTO vms.master_country (id, code, name) VALUES (100082, 'GM', 'Cộng hòa Gămbia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100083, 'GE', 'Gruzia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100084, 'DE', 'Cộng hòa Liên bang Đức');
-INSERT INTO vms.master_country (id, code, name) VALUES (100085, 'GH', 'Cộng hòa Gana');
-INSERT INTO vms.master_country (id, code, name) VALUES (100086, 'GI', 'Gibranta');
-INSERT INTO vms.master_country (id, code, name) VALUES (100087, 'GR', 'Cộng hòa Hy Lạp');
-INSERT INTO vms.master_country (id, code, name) VALUES (100088, 'GL', 'Grinlen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100089, 'GD', 'Grênata');
-INSERT INTO vms.master_country (id, code, name) VALUES (100090, 'GP', 'Guađờlup');
-INSERT INTO vms.master_country (id, code, name) VALUES (100091, 'GU', 'Guam');
-INSERT INTO vms.master_country (id, code, name) VALUES (100092, 'GT', 'Cộng hòa Goatêmala');
-INSERT INTO vms.master_country (id, code, name) VALUES (100093, 'GG', 'Guensây');
-INSERT INTO vms.master_country (id, code, name) VALUES (100094, 'GN', 'Cộng hòa Ghinê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100095, 'GW', 'Cộng hòa Ghinê Bitxao');
-INSERT INTO vms.master_country (id, code, name) VALUES (100096, 'GY', 'Cộng hòa Guyana');
-INSERT INTO vms.master_country (id, code, name) VALUES (100097, 'HT', 'Cộng hòa Haiti');
-INSERT INTO vms.master_country (id, code, name) VALUES (100098, 'HM', 'Đảo Hớt và Quần đảo Mắc Đônan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100099, 'VA', 'Holi Si (nhà nước thành phố Vaticăng)');
-INSERT INTO vms.master_country (id, code, name) VALUES (100100, 'HN', 'Cộng hòa Hônđurát');
-INSERT INTO vms.master_country (id, code, name) VALUES (100101, 'HU', 'Cộng hòa Hunggari');
-INSERT INTO vms.master_country (id, code, name) VALUES (100102, 'IS', 'Cộng hòa Aixơlen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100103, 'IN', 'Cộng hòa Ấn Độ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100104, 'ID', 'Cộng hòa Inđônêxia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100105, 'IR', 'Cộng hòa hồi giáo Iran');
-INSERT INTO vms.master_country (id, code, name) VALUES (100106, 'IQ', 'Cộng hòa Irắc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100107, 'IE', 'Ailen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100108, 'IM', 'Đảo MAN');
-INSERT INTO vms.master_country (id, code, name) VALUES (100109, 'IL', 'Nhà nước Ixraen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100110, 'IT', 'Cộng hòa Italia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100111, 'JM', 'Giamaica');
-INSERT INTO vms.master_country (id, code, name) VALUES (100112, 'JP', 'Nhật');
-INSERT INTO vms.master_country (id, code, name) VALUES (100113, 'JE', 'Ghisêy');
-INSERT INTO vms.master_country (id, code, name) VALUES (100114, 'JO', 'Vương quốc Hasimít của Gioócđani');
-INSERT INTO vms.master_country (id, code, name) VALUES (100115, 'KZ', 'Cộng hòa Kadắcxtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100116, 'KE', 'Cộng hòa Kênia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100117, 'KI', 'Cộng hòa Kiribati');
-INSERT INTO vms.master_country (id, code, name) VALUES (100118, 'KR', 'Cộng hòa Hàn Quốc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100119, 'KW', 'Nhà nước Côoét');
-INSERT INTO vms.master_country (id, code, name) VALUES (100120, 'KG', 'Cộng hòa Cưrơgưxtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100121, 'LA', 'Cộng hòa dân chủ nhân dân Lào');
-INSERT INTO vms.master_country (id, code, name) VALUES (100122, 'LV', 'Cộng hòa Látvia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100123, 'LB', 'Cộng hòa Libăng');
-INSERT INTO vms.master_country (id, code, name) VALUES (100124, 'LS', 'Vương quốc Lêxôtô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100125, 'LR', 'Cộng hòa Libêria');
-INSERT INTO vms.master_country (id, code, name) VALUES (100126, 'LY', 'Cộng hòa xã hội chủ nghĩa nhân dân Giamahiriia ả rập Libi');
-INSERT INTO vms.master_country (id, code, name) VALUES (100127, 'LI', 'Công quốc Lichtenxtên');
-INSERT INTO vms.master_country (id, code, name) VALUES (100128, 'LT', 'Cộng hòa Lítva');
-INSERT INTO vms.master_country (id, code, name) VALUES (100129, 'LU', 'Đại công quốc Lúcxămbua');
-INSERT INTO vms.master_country (id, code, name) VALUES (100130, 'MK', 'Maxêđônia, Cộng hòa Nam Tư cũ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100131, 'MG', 'Cộng hòa Mađagaxca');
-INSERT INTO vms.master_country (id, code, name) VALUES (100132, 'MW', 'Cộng hòa Malauy');
-INSERT INTO vms.master_country (id, code, name) VALUES (100133, 'MY', 'Malaixia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100134, 'MV', 'Cộng hòa Manđivơ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100135, 'ML', 'Cộng hòa Mali');
-INSERT INTO vms.master_country (id, code, name) VALUES (100136, 'MT', 'Cộng hòa Manta');
-INSERT INTO vms.master_country (id, code, name) VALUES (100137, 'MH', 'Cộng hòa quần đảo Mácsan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100138, 'MQ', 'Máctanhnic');
-INSERT INTO vms.master_country (id, code, name) VALUES (100139, 'MR', 'Cộng hòa hồi giáo Môritani');
-INSERT INTO vms.master_country (id, code, name) VALUES (100140, 'MU', 'Cộng hòa Môrixơ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100141, 'YT', 'Mayốt');
-INSERT INTO vms.master_country (id, code, name) VALUES (100142, 'MX', 'Liên bang thống nhất Mêhicô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100143, 'FM', 'Liên bang Micrônêxia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100144, 'MD', 'Cộng hòa Mônđôva');
-INSERT INTO vms.master_country (id, code, name) VALUES (100145, 'MC', 'Công quốc Mônacô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100146, 'MN', 'Mông Cổ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100147, 'ME', 'Cộng hòa Môngtơnêgrô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100148, 'MS', 'Môngxơrát');
-INSERT INTO vms.master_country (id, code, name) VALUES (100149, 'MA', 'Vương quốc Marốc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100150, 'MZ', 'Cộng hòa Môdămbíc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100151, 'MM', 'Liên bang Mianma');
-INSERT INTO vms.master_country (id, code, name) VALUES (100152, 'NA', 'Cộng hòa Nambia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100153, 'NR', 'Cộng hòa Nauru');
-INSERT INTO vms.master_country (id, code, name) VALUES (100154, 'NP', 'Nêpan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100155, 'NL', 'Vương quốc Hà Lan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100156, 'AN', 'Ăngtin thuộc Hà Lan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100157, 'NC', 'Niu Calêđônia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100158, 'NZ', 'Niu Dilân');
-INSERT INTO vms.master_country (id, code, name) VALUES (100159, 'NI', 'Cộng hòa Nicaragoa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100160, 'NE', 'Cộng hòa Nigiê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100161, 'NG', 'Cộng hòa Liên bang Nigiêria');
-INSERT INTO vms.master_country (id, code, name) VALUES (100162, 'NU', 'Cộng hòa Niui');
-INSERT INTO vms.master_country (id, code, name) VALUES (100163, 'NF', 'Quần đảo Nophoóc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100164, 'MP', 'Cồng đồng quần đảo Bắc Marianna');
-INSERT INTO vms.master_country (id, code, name) VALUES (100165, 'NO', 'Vương quốc Na uy');
-INSERT INTO vms.master_country (id, code, name) VALUES (100166, 'OM', 'Vương quốc Ôman');
-INSERT INTO vms.master_country (id, code, name) VALUES (100167, 'PK', 'Cộng hòa Hồi giáo Pakixtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100168, 'PW', 'Cộng hòa Palau');
-INSERT INTO vms.master_country (id, code, name) VALUES (100169, 'PS', 'Vùng lãnh thổ Paletxtin bị chiếm đóng');
-INSERT INTO vms.master_country (id, code, name) VALUES (100170, 'PA', 'Cộng hòa Panama');
-INSERT INTO vms.master_country (id, code, name) VALUES (100171, 'PG', 'Papua Niu Ghinê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100172, 'PY', 'Cộng hòa Paragoay');
-INSERT INTO vms.master_country (id, code, name) VALUES (100173, 'PE', 'Cộng hòa Pêru');
-INSERT INTO vms.master_country (id, code, name) VALUES (100174, 'PH', 'Cộng hòa Philippin');
-INSERT INTO vms.master_country (id, code, name) VALUES (100175, 'PN', 'Pitcan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100176, 'PL', 'Cộng hòa Ba Lan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100177, 'PT', 'Cộng hòa Bồ Đào Nha');
-INSERT INTO vms.master_country (id, code, name) VALUES (100178, 'PR', 'Puêtôricô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100179, 'QA', 'Nhà nước Cata');
-INSERT INTO vms.master_country (id, code, name) VALUES (100180, 'RE', 'Rêuniông');
-INSERT INTO vms.master_country (id, code, name) VALUES (100181, 'RO', 'Rumani');
-INSERT INTO vms.master_country (id, code, name) VALUES (100182, 'RU', 'Liên bang Nga');
-INSERT INTO vms.master_country (id, code, name) VALUES (100183, 'RW', 'Cộng hòa Ruanđa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100184, 'BL', 'Cộng đồng Saint Barthélemy');
-INSERT INTO vms.master_country (id, code, name) VALUES (100185, 'SH', 'Xanh Hêlêna');
-INSERT INTO vms.master_country (id, code, name) VALUES (100186, 'KN', 'Xanh Kít và Nêvít');
-INSERT INTO vms.master_country (id, code, name) VALUES (100187, 'LC', 'Xanh Luxia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100188, 'MF', 'Cộng đồng Saint Martin');
-INSERT INTO vms.master_country (id, code, name) VALUES (100189, 'PM', 'Xanh Pie và Michkelông');
-INSERT INTO vms.master_country (id, code, name) VALUES (100190, 'VC', 'Xanh Vinxen và Grênađin');
-INSERT INTO vms.master_country (id, code, name) VALUES (100191, 'WS', 'Nhà nước độc lập Xamoa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100192, 'SM', 'Cộng hòa Xan Marinô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100193, 'ST', 'Cộng hòa dân chủ Xao Tômê và Prinxipê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100194, 'SA', 'Vương quốc ả rập Xêút');
-INSERT INTO vms.master_country (id, code, name) VALUES (100195, 'SN', 'Cộng hòa Xênêgan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100196, 'RS', 'Cộng hòa Xécbia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100197, 'SC', 'Cộng hòa Xâysen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100198, 'SL', 'Cộng hòa Xiêra Lêôn');
-INSERT INTO vms.master_country (id, code, name) VALUES (100199, 'SG', 'Cộng hòa Xingapo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100200, 'SK', 'Cộng hòa Xlôvakia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100201, 'SI', 'Cộng hòa Xlôvênia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100202, 'SB', 'Quần đảo Xôlômôn');
-INSERT INTO vms.master_country (id, code, name) VALUES (100203, 'SO', 'Cộng hòa Xômali');
-INSERT INTO vms.master_country (id, code, name) VALUES (100204, 'ZA', 'Cộng hòa Nam Phi');
-INSERT INTO vms.master_country (id, code, name) VALUES (100205, 'GS', 'Nam Gioócgia và quần đảo');
-INSERT INTO vms.master_country (id, code, name) VALUES (100206, 'SS', 'Cộng hòa Nam Sudan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100207, 'ES', 'Vương quốc Tây Ban Nha');
-INSERT INTO vms.master_country (id, code, name) VALUES (100208, 'LK', 'Cộng hòa dân chủ xã hội XriLanca');
-INSERT INTO vms.master_country (id, code, name) VALUES (100209, 'SD', 'Cộng hòa Xuđăng');
-INSERT INTO vms.master_country (id, code, name) VALUES (100210, 'SR', 'Cộng hòa Xurinam');
-INSERT INTO vms.master_country (id, code, name) VALUES (100211, 'SJ', 'Xvenbát và Genmâyơn');
-INSERT INTO vms.master_country (id, code, name) VALUES (100212, 'SZ', 'Vương quốc Xoadilen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100213, 'SE', 'Vương quốc Thuỵ Điển');
-INSERT INTO vms.master_country (id, code, name) VALUES (100214, 'CH', 'Liên bang Thụy Sỹ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100215, 'SY', 'Cộng hòa ả rập Xyri');
-INSERT INTO vms.master_country (id, code, name) VALUES (100216, 'TW', 'Đài Loan, một tỉnh của Trung Quốc');
-INSERT INTO vms.master_country (id, code, name) VALUES (100217, 'TJ', 'Cộng hòa Tagikixtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100218, 'TZ', 'Cộng hòa thống nhất Tandania');
-INSERT INTO vms.master_country (id, code, name) VALUES (100219, 'TH', 'Vương quốc Thái Lan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100220, 'TL', 'Cộng hòa dân chủ Timo- Leste');
-INSERT INTO vms.master_country (id, code, name) VALUES (100221, 'TG', 'Cộng hòa Tôgô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100222, 'TK', 'Tôkêlô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100223, 'TO', 'Vương quốc Tônga');
-INSERT INTO vms.master_country (id, code, name) VALUES (100224, 'TT', 'Cộng hòa Tơriniđát và Tôbagô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100225, 'TN', 'Cộng hòa Tuynidi');
-INSERT INTO vms.master_country (id, code, name) VALUES (100226, 'TR', 'Cộng hòa Thổ Nhĩ Kỳ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100227, 'TM', 'Tuốcmênixtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100228, 'TC', 'Quần đảo người Tuốc và Caicô');
-INSERT INTO vms.master_country (id, code, name) VALUES (100229, 'TV', 'Tuvalu');
-INSERT INTO vms.master_country (id, code, name) VALUES (100230, 'UG', 'Cộng hòa Uganda');
-INSERT INTO vms.master_country (id, code, name) VALUES (100231, 'UA', 'Ucraina');
-INSERT INTO vms.master_country (id, code, name) VALUES (100232, 'AE', 'Các tiểu Vương quốc ả rập thống nhất');
-INSERT INTO vms.master_country (id, code, name) VALUES (100233, 'GB', 'Vương quốc Liên hiệp Anh và Bắc Ailen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100234, 'US', 'Hợp chủng quốc Hoa Kỳ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100235, 'UM', 'Đảo nhỏ nằm ngoài lãnh thổ Hoa Kỳ');
-INSERT INTO vms.master_country (id, code, name) VALUES (100236, 'UY', 'Cộng hòa Đông Uruuoay');
-INSERT INTO vms.master_country (id, code, name) VALUES (100237, 'UZ', 'Cộng hòa Udơbêkixtan');
-INSERT INTO vms.master_country (id, code, name) VALUES (100238, 'VU', 'Cộng hòa Vanuatu');
-INSERT INTO vms.master_country (id, code, name) VALUES (100239, 'VE', 'Cộng hòa Vênêxuêla');
-INSERT INTO vms.master_country (id, code, name) VALUES (100240, 'VI', 'Quần đảo Viếcgina (Hoa Kỳ)');
-INSERT INTO vms.master_country (id, code, name) VALUES (100241, 'WF', 'Quần đảo Uây và Futuna');
-INSERT INTO vms.master_country (id, code, name) VALUES (100242, 'EH', 'Tây Sahara');
-INSERT INTO vms.master_country (id, code, name) VALUES (100243, 'YE', 'Cộng hòa Yêmen');
-INSERT INTO vms.master_country (id, code, name) VALUES (100244, 'ZM', 'Cộng hòa Dămbia');
-INSERT INTO vms.master_country (id, code, name) VALUES (100245, 'ZW', 'Cộng hòa Dimbabuê');
-INSERT INTO vms.master_country (id, code, name) VALUES (100266, 'GE-AB', 'Áp-kha-di-a');
-INSERT INTO vms.master_country (id, code, name) VALUES (100267, 'CI', 'Cộng hòa Cốt Đivoa');
-INSERT INTO vms.master_country (id, code, name) VALUES (100268, 'KP', 'Cộng hòa dân chủ nhân dân Triều Tiên');
-INSERT INTO vms.master_country (id, code, name) VALUES (100269, 'NGUOCNGOAI', 'Người nước ngoài');
-INSERT INTO vms.master_country (id, code, name) VALUES (100270, 'GB-WLS', 'Xứ Gan');
+insert into vms.master_country (id, code, name)
+values  (100001, 'VN', 'Viet Nam'),
+        (100002, 'AF', 'Cộng hòa Hồi giáo Ápganixtan'),
+        (100003, 'AX', 'Đảo Aland'),
+        (100004, 'AL', 'Cộng hòa Anbani'),
+        (100005, 'DZ', 'Cộng hòa dân chủ nhân dân Angiêri'),
+        (100006, 'AS', 'Xamoa Châu Mỹ'),
+        (100007, 'AD', 'Công quốc Anđôra'),
+        (100008, 'AO', 'Cộng hòa ănggôla'),
+        (100009, 'AI', 'Ăngguyla'),
+        (100010, 'AQ', 'Nam Cực'),
+        (100011, 'AG', 'Ăngtigoa vµ bácbuđa'),
+        (100012, 'AR', 'Cộng hòa áchentina'),
+        (100013, 'AM', 'Cộng hòa ácmênia'),
+        (100014, 'AW', 'Aruba'),
+        (100015, 'AU', 'Ôxtrâylia'),
+        (100016, 'AT', 'Cộng hòa áo'),
+        (100017, 'AZ', 'Cộng hòa Adécbaigian'),
+        (100018, 'BS', 'Cộng đồng các đảo Bahamát'),
+        (100019, 'BH', 'Vương quốc Bơhrên'),
+        (100020, 'BD', 'Cộng hòa nhân dân Bănglađét'),
+        (100021, 'BB', 'Bácbađốt'),
+        (100022, 'BY', 'Cộng hòa Bêlarút'),
+        (100023, 'BE', 'Vương quốc Bỉ'),
+        (100024, 'BZ', 'Bêlixê'),
+        (100025, 'BJ', 'Cộng hòa Bênanh'),
+        (100026, 'BM', 'Bécmuda'),
+        (100027, 'BT', 'Vương quốc Butan'),
+        (100028, 'BO', 'Cộng hòa Bôlivia'),
+        (100029, 'BA', 'Bôxnia và Hécxegôvina'),
+        (100030, 'BW', 'Cộng hòa Bốtxoana'),
+        (100031, 'BV', 'Đảo Buvê'),
+        (100032, 'BR', 'Cộng hòa Liên bang Braxin'),
+        (100033, 'VG', 'Quần đảo Viếcgina thuộc Anh'),
+        (100034, 'IO', 'Vùng ấn Độ Dương thuộc Anh'),
+        (100035, 'BN', 'Brunây Đarussalam'),
+        (100036, 'BG', 'Cộng hòa Bungari'),
+        (100037, 'BF', 'Buốckina Phaxô'),
+        (100038, 'BI', 'Cộng hòa Burunđi'),
+        (100039, 'KH', 'Vương quốc Campuchia'),
+        (100040, 'CM', 'Cộng hòa Camdrun'),
+        (100041, 'CA', 'Canađa'),
+        (100042, 'CV', 'Cộng hòa Cáp Ve'),
+        (100043, 'KY', 'Quần đảo Câymơn'),
+        (100044, 'CF', 'Cộng hòa Trung Phi'),
+        (100045, 'TD', 'Cộng hòa Sát'),
+        (100046, 'CL', 'Cộng hòa Chilê'),
+        (100047, 'CN', 'Cộng hòa nhân dân Trung Hoa'),
+        (100048, 'HK', 'Đặc khu hành chính Hồng Kông thuộcTrung Quốc'),
+        (100049, 'MO', 'Đặc khu hành chính Macao của Trung Quốc'),
+        (100050, 'CX', 'Đảo Krixtêmớt'),
+        (100051, 'CC', 'Quần đảo Cốt'),
+        (100052, 'CO', 'Cộng hòa Côlômbia'),
+        (100053, 'KM', 'Liên Minh Cômo'),
+        (100054, 'CG', 'Cộng hòa Cônggô'),
+        (100055, 'CD', 'Cộng hòa dân chủ Cônggô'),
+        (100056, 'CK', 'Quần đảo Cook'),
+        (100057, 'CR', 'Cộng hòa C«xta Rica'),
+        (100058, 'HR', 'Cộng hòa Crôatia'),
+        (100059, 'CU', 'Cộng hòa Cuba'),
+        (100060, 'CY', 'Cộng hòa Síp'),
+        (100061, 'CZ', 'Cộng hòa Séc'),
+        (100062, 'DK', 'Vương quốc Đan Mạch'),
+        (100063, 'DJ', 'Cộng hòa Gibuti'),
+        (100064, 'DM', 'Khối thịnh vượng chung Đôminica'),
+        (100065, 'DO', 'Cộng hòa Đôminica'),
+        (100066, 'EC', 'Cộng hòa Êcuađo'),
+        (100067, 'EG', 'Cộng hòa ả rập Ai Cập'),
+        (100068, 'SV', 'Cộng hòa En Xanvađo'),
+        (100069, 'GQ', 'Cộng hòa Ghinê Xích đạo'),
+        (100070, 'ER', 'Êritơria'),
+        (100071, 'EE', 'Cộng hòa Extônia'),
+        (100072, 'ET', 'Cộng hòa dân chủ liên bang Êtiôpia'),
+        (100073, 'FK', 'Quần đảo Phoóclen(Manvina)'),
+        (100074, 'FO', 'Đảo Pharâu'),
+        (100075, 'FJ', 'Cộng hòa quần đảo Fiji'),
+        (100076, 'FI', 'Cộng hòa Phần Lan'),
+        (100077, 'FR', 'Cộng hòa Pháp'),
+        (100078, 'GF', 'Guyanna thuộc Pháp'),
+        (100079, 'PF', 'Pôlinêxia thuộc Pháp'),
+        (100080, 'TF', 'Lãnh thổ thuộc Pháp phía Nam'),
+        (100081, 'GA', 'Cộng hòa Gabông'),
+        (100082, 'GM', 'Cộng hòa Gămbia'),
+        (100083, 'GE', 'Gruzia'),
+        (100084, 'DE', 'Cộng hòa Liên bang Đức'),
+        (100085, 'GH', 'Cộng hòa Gana'),
+        (100086, 'GI', 'Gibranta'),
+        (100087, 'GR', 'Cộng hòa Hy Lạp'),
+        (100088, 'GL', 'Grinlen'),
+        (100089, 'GD', 'Grênata'),
+        (100090, 'GP', 'Guađờlup'),
+        (100091, 'GU', 'Guam'),
+        (100092, 'GT', 'Cộng hòa Goatêmala'),
+        (100093, 'GG', 'Guensây'),
+        (100094, 'GN', 'Cộng hòa Ghinê'),
+        (100095, 'GW', 'Cộng hòa Ghinê Bitxao'),
+        (100096, 'GY', 'Cộng hòa Guyana'),
+        (100097, 'HT', 'Cộng hòa Haiti'),
+        (100098, 'HM', 'Đảo Hớt và Quần đảo Mắc Đônan'),
+        (100099, 'VA', 'Holi Si (nhà nước thành phố Vaticăng)'),
+        (100100, 'HN', 'Cộng hòa Hônđurát'),
+        (100101, 'HU', 'Cộng hòa Hunggari'),
+        (100102, 'IS', 'Cộng hòa Aixơlen'),
+        (100103, 'IN', 'Cộng hòa Ấn Độ'),
+        (100104, 'ID', 'Cộng hòa Inđônêxia'),
+        (100105, 'IR', 'Cộng hòa hồi giáo Iran'),
+        (100106, 'IQ', 'Cộng hòa Irắc'),
+        (100107, 'IE', 'Ailen'),
+        (100108, 'IM', 'Đảo MAN'),
+        (100109, 'IL', 'Nhà nước Ixraen'),
+        (100110, 'IT', 'Cộng hòa Italia'),
+        (100111, 'JM', 'Giamaica'),
+        (100112, 'JP', 'Nhật'),
+        (100113, 'JE', 'Ghisêy'),
+        (100114, 'JO', 'Vương quốc Hasimít của Gioócđani'),
+        (100115, 'KZ', 'Cộng hòa Kadắcxtan'),
+        (100116, 'KE', 'Cộng hòa Kênia'),
+        (100117, 'KI', 'Cộng hòa Kiribati'),
+        (100118, 'KR', 'Cộng hòa Hàn Quốc'),
+        (100119, 'KW', 'Nhà nước Côoét'),
+        (100120, 'KG', 'Cộng hòa Cưrơgưxtan'),
+        (100121, 'LA', 'Cộng hòa dân chủ nhân dân Lào'),
+        (100122, 'LV', 'Cộng hòa Látvia'),
+        (100123, 'LB', 'Cộng hòa Libăng'),
+        (100124, 'LS', 'Vương quốc Lêxôtô'),
+        (100125, 'LR', 'Cộng hòa Libêria'),
+        (100126, 'LY', 'Cộng hòa xã hội chủ nghĩa nhân dân Giamahiriia ả rập Libi'),
+        (100127, 'LI', 'Công quốc Lichtenxtên'),
+        (100128, 'LT', 'Cộng hòa Lítva'),
+        (100129, 'LU', 'Đại công quốc Lúcxămbua'),
+        (100130, 'MK', 'Maxêđônia, Cộng hòa Nam Tư cũ'),
+        (100131, 'MG', 'Cộng hòa Mađagaxca'),
+        (100132, 'MW', 'Cộng hòa Malauy'),
+        (100133, 'MY', 'Malaixia'),
+        (100134, 'MV', 'Cộng hòa Manđivơ'),
+        (100135, 'ML', 'Cộng hòa Mali'),
+        (100136, 'MT', 'Cộng hòa Manta'),
+        (100137, 'MH', 'Cộng hòa quần đảo Mácsan'),
+        (100138, 'MQ', 'Máctanhnic'),
+        (100139, 'MR', 'Cộng hòa hồi giáo Môritani'),
+        (100140, 'MU', 'Cộng hòa Môrixơ'),
+        (100141, 'YT', 'Mayốt'),
+        (100142, 'MX', 'Liên bang thống nhất Mêhicô'),
+        (100143, 'FM', 'Liên bang Micrônêxia'),
+        (100144, 'MD', 'Cộng hòa Mônđôva'),
+        (100145, 'MC', 'Công quốc Mônacô'),
+        (100146, 'MN', 'Mông Cổ'),
+        (100147, 'ME', 'Cộng hòa Môngtơnêgrô'),
+        (100148, 'MS', 'Môngxơrát'),
+        (100149, 'MA', 'Vương quốc Marốc'),
+        (100150, 'MZ', 'Cộng hòa Môdămbíc'),
+        (100151, 'MM', 'Liên bang Mianma'),
+        (100152, 'NA', 'Cộng hòa Nambia'),
+        (100153, 'NR', 'Cộng hòa Nauru'),
+        (100154, 'NP', 'Nêpan'),
+        (100155, 'NL', 'Vương quốc Hà Lan'),
+        (100156, 'AN', 'Ăngtin thuộc Hà Lan'),
+        (100157, 'NC', 'Niu Calêđônia'),
+        (100158, 'NZ', 'Niu Dilân'),
+        (100159, 'NI', 'Cộng hòa Nicaragoa'),
+        (100160, 'NE', 'Cộng hòa Nigiê'),
+        (100161, 'NG', 'Cộng hòa Liên bang Nigiêria'),
+        (100162, 'NU', 'Cộng hòa Niui'),
+        (100163, 'NF', 'Quần đảo Nophoóc'),
+        (100164, 'MP', 'Cồng đồng quần đảo Bắc Marianna'),
+        (100165, 'NO', 'Vương quốc Na uy'),
+        (100166, 'OM', 'Vương quốc Ôman'),
+        (100167, 'PK', 'Cộng hòa Hồi giáo Pakixtan'),
+        (100168, 'PW', 'Cộng hòa Palau'),
+        (100169, 'PS', 'Vùng lãnh thổ Paletxtin bị chiếm đóng'),
+        (100170, 'PA', 'Cộng hòa Panama'),
+        (100171, 'PG', 'Papua Niu Ghinê'),
+        (100172, 'PY', 'Cộng hòa Paragoay'),
+        (100173, 'PE', 'Cộng hòa Pêru'),
+        (100174, 'PH', 'Cộng hòa Philippin'),
+        (100175, 'PN', 'Pitcan'),
+        (100176, 'PL', 'Cộng hòa Ba Lan'),
+        (100177, 'PT', 'Cộng hòa Bồ Đào Nha'),
+        (100178, 'PR', 'Puêtôricô'),
+        (100179, 'QA', 'Nhà nước Cata'),
+        (100180, 'RE', 'Rêuniông'),
+        (100181, 'RO', 'Rumani'),
+        (100182, 'RU', 'Liên bang Nga'),
+        (100183, 'RW', 'Cộng hòa Ruanđa'),
+        (100184, 'BL', 'Cộng đồng Saint Barthélemy'),
+        (100185, 'SH', 'Xanh Hêlêna'),
+        (100186, 'KN', 'Xanh Kít và Nêvít'),
+        (100187, 'LC', 'Xanh Luxia'),
+        (100188, 'MF', 'Cộng đồng Saint Martin'),
+        (100189, 'PM', 'Xanh Pie và Michkelông'),
+        (100190, 'VC', 'Xanh Vinxen và Grênađin'),
+        (100191, 'WS', 'Nhà nước độc lập Xamoa'),
+        (100192, 'SM', 'Cộng hòa Xan Marinô'),
+        (100193, 'ST', 'Cộng hòa dân chủ Xao Tômê và Prinxipê'),
+        (100194, 'SA', 'Vương quốc ả rập Xêút'),
+        (100195, 'SN', 'Cộng hòa Xênêgan'),
+        (100196, 'RS', 'Cộng hòa Xécbia'),
+        (100197, 'SC', 'Cộng hòa Xâysen'),
+        (100198, 'SL', 'Cộng hòa Xiêra Lêôn'),
+        (100199, 'SG', 'Cộng hòa Xingapo'),
+        (100200, 'SK', 'Cộng hòa Xlôvakia'),
+        (100201, 'SI', 'Cộng hòa Xlôvênia'),
+        (100202, 'SB', 'Quần đảo Xôlômôn'),
+        (100203, 'SO', 'Cộng hòa Xômali'),
+        (100204, 'ZA', 'Cộng hòa Nam Phi'),
+        (100205, 'GS', 'Nam Gioócgia và quần đảo'),
+        (100206, 'SS', 'Cộng hòa Nam Sudan'),
+        (100207, 'ES', 'Vương quốc Tây Ban Nha'),
+        (100208, 'LK', 'Cộng hòa dân chủ xã hội XriLanca'),
+        (100209, 'SD', 'Cộng hòa Xuđăng'),
+        (100210, 'SR', 'Cộng hòa Xurinam'),
+        (100211, 'SJ', 'Xvenbát và Genmâyơn'),
+        (100212, 'SZ', 'Vương quốc Xoadilen'),
+        (100213, 'SE', 'Vương quốc Thuỵ Điển'),
+        (100214, 'CH', 'Liên bang Thụy Sỹ'),
+        (100215, 'SY', 'Cộng hòa ả rập Xyri'),
+        (100216, 'TW', 'Đài Loan, một tỉnh của Trung Quốc'),
+        (100217, 'TJ', 'Cộng hòa Tagikixtan'),
+        (100218, 'TZ', 'Cộng hòa thống nhất Tandania'),
+        (100219, 'TH', 'Vương quốc Thái Lan'),
+        (100220, 'TL', 'Cộng hòa dân chủ Timo- Leste'),
+        (100221, 'TG', 'Cộng hòa Tôgô'),
+        (100222, 'TK', 'Tôkêlô'),
+        (100223, 'TO', 'Vương quốc Tônga'),
+        (100224, 'TT', 'Cộng hòa Tơriniđát và Tôbagô'),
+        (100225, 'TN', 'Cộng hòa Tuynidi'),
+        (100226, 'TR', 'Cộng hòa Thổ Nhĩ Kỳ'),
+        (100227, 'TM', 'Tuốcmênixtan'),
+        (100228, 'TC', 'Quần đảo người Tuốc và Caicô'),
+        (100229, 'TV', 'Tuvalu'),
+        (100230, 'UG', 'Cộng hòa Uganda'),
+        (100231, 'UA', 'Ucraina'),
+        (100232, 'AE', 'Các tiểu Vương quốc ả rập thống nhất'),
+        (100233, 'GB', 'Vương quốc Liên hiệp Anh và Bắc Ailen'),
+        (100234, 'US', 'Hợp chủng quốc Hoa Kỳ'),
+        (100235, 'UM', 'Đảo nhỏ nằm ngoài lãnh thổ Hoa Kỳ'),
+        (100236, 'UY', 'Cộng hòa Đông Uruuoay'),
+        (100237, 'UZ', 'Cộng hòa Udơbêkixtan'),
+        (100238, 'VU', 'Cộng hòa Vanuatu'),
+        (100239, 'VE', 'Cộng hòa Vênêxuêla'),
+        (100240, 'VI', 'Quần đảo Viếcgina (Hoa Kỳ)'),
+        (100241, 'WF', 'Quần đảo Uây và Futuna'),
+        (100242, 'EH', 'Tây Sahara'),
+        (100243, 'YE', 'Cộng hòa Yêmen'),
+        (100244, 'ZM', 'Cộng hòa Dămbia'),
+        (100245, 'ZW', 'Cộng hòa Dimbabuê'),
+        (100266, 'GE-AB', 'Áp-kha-di-a'),
+        (100267, 'CI', 'Cộng hòa Cốt Đivoa'),
+        (100268, 'KP', 'Cộng hòa dân chủ nhân dân Triều Tiên'),
+        (100269, 'NGUOCNGOAI', 'Người nước ngoài'),
+        (100270, 'GB-WLS', 'Xứ Gan');
