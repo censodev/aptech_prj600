@@ -4,20 +4,20 @@ $navbar = [
     [
         'title' => 'Danh sách tiêm chủng',
         'children' => [
-            ['link' => Helper::url('admin'), 'icon' => 'users', 'title' => 'Đăng ký tiêm'],
-            ['link' => Helper::url('admin?status=1'), 'icon' => 'users', 'title' => 'Chờ khám'],
-            ['link' => Helper::url('admin?status=2'), 'icon' => 'users', 'title' => 'Chờ tiêm'],
-            ['link' => Helper::url('admin?status=3'), 'icon' => 'users', 'title' => 'Theo dõi sau tiêm'],
-            ['link' => Helper::url('admin?status=4'), 'icon' => 'user-check', 'title' => 'Hoàn thành tiêm chủng'],
-            ['link' => Helper::url('admin?status=-1'), 'icon' => 'user-x', 'title' => 'Từ chối tiêm'],
-            ['link' => Helper::url('admin?status=-2'), 'icon' => 'user-x', 'title' => 'Triệu chứng bất thường'],
+            ['link' => 'admin/home?status=0', 'icon' => 'users', 'title' => 'Đăng ký tiêm'],
+            ['link' => 'admin/home?status=1', 'icon' => 'users', 'title' => 'Chờ khám'],
+            ['link' => 'admin/home?status=2', 'icon' => 'users', 'title' => 'Chờ tiêm'],
+            ['link' => 'admin/home?status=3', 'icon' => 'users', 'title' => 'Theo dõi sau tiêm'],
+            ['link' => 'admin/home?status=4', 'icon' => 'user-check', 'title' => 'Hoàn thành tiêm chủng'],
+            ['link' => 'admin/home?status=-1', 'icon' => 'user-x', 'title' => 'Từ chối tiêm'],
+            ['link' => 'admin/home?status=-2', 'icon' => 'user-x', 'title' => 'Triệu chứng bất thường'],
         ],
     ],
     [
         'title' => 'Quản lý vật tư',
         'children' => [
-            ['link' => Helper::url('admin/vaccine'), 'icon' => 'box', 'title' => 'Vaccine'],
-            ['link' => Helper::url('admin/injection-site'), 'icon' => 'home', 'title' => 'Điểm tiêm'],
+            ['link' => 'admin/vaccine', 'icon' => 'box', 'title' => 'Vaccine'],
+            ['link' => 'admin/injection-site', 'icon' => 'home', 'title' => 'Điểm tiêm'],
         ],
     ],
 ];
@@ -46,7 +46,7 @@ $navbar = [
 
     <link href="<?php echo Helper::assets('css/app.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo Helper::assets('css/admin.css')?>">
+    <link rel="stylesheet" href="<?php echo Helper::assets('css/admin.css') ?>">
 </head>
 
 <body>
@@ -63,8 +63,8 @@ $navbar = [
                             <?php echo $nav_item['title'] ?>
                         </li>
                         <?php foreach ($nav_item['children'] as $nav_child): ?>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link d-flex" href="<?php echo $nav_child['link'] ?>">
+                            <li class="sidebar-item <?php echo str_contains($_SERVER['REQUEST_URI'], $nav_child['link']) ? 'active' : '' ?>">
+                                <a class="sidebar-link d-flex" href="<?php echo Helper::url($nav_child['link']) ?>">
                                     <i class="align-middle" data-feather="<?php echo $nav_child['icon'] ?>"></i>
                                     <div
                                             class="align-middle"><?php echo $nav_child['title'] ?></div>

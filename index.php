@@ -9,7 +9,9 @@ include_once 'src/core/autoload.php';
 session_start();
 
 $route = $_GET['url'] ?? 'home';
-$route = $route == 'admin' || $route == 'admin/' ? 'admin/home' : $route;
+if ($route == 'admin' || $route == 'admin/') {
+    Helper::redirect('admin/home?status=0');
+}
 
 // API
 if (str_contains($route, 'api')) {
