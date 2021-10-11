@@ -6,6 +6,15 @@ class Profile extends Model
     {
         return 'profiles';
     }
+
+    public static function gender(int $gender): string
+    {
+        return match ($gender) {
+            0 => 'Nữ',
+            1 => 'Nam',
+            default => 'Không xác định',
+        };
+    }
 }
 
 abstract class ProfileStatus

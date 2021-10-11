@@ -4,13 +4,13 @@ $navbar = [
     [
         'title' => 'Danh sách tiêm chủng',
         'children' => [
-            ['link' => Helper::url('admin?s=0'), 'icon' => 'users', 'title' => 'Đăng ký tiêm'],
-            ['link' => Helper::url('admin?s=1'), 'icon' => 'users', 'title' => 'Chờ khám'],
-            ['link' => Helper::url('admin?s=2'), 'icon' => 'users', 'title' => 'Chờ tiêm'],
-            ['link' => Helper::url('admin?s=3'), 'icon' => 'users', 'title' => 'Theo dõi sau tiêm'],
-            ['link' => Helper::url('admin?s=4'), 'icon' => 'user-check', 'title' => 'Hoàn thành tiêm chủng'],
-            ['link' => Helper::url('admin?s=-1'), 'icon' => 'user-x', 'title' => 'Từ chối tiêm'],
-            ['link' => Helper::url('admin?s=-2'), 'icon' => 'user-x', 'title' => 'Triệu chứng bất thường'],
+            ['link' => Helper::url('admin?status=0'), 'icon' => 'users', 'title' => 'Đăng ký tiêm'],
+            ['link' => Helper::url('admin?status=1'), 'icon' => 'users', 'title' => 'Chờ khám'],
+            ['link' => Helper::url('admin?status=2'), 'icon' => 'users', 'title' => 'Chờ tiêm'],
+            ['link' => Helper::url('admin?status=3'), 'icon' => 'users', 'title' => 'Theo dõi sau tiêm'],
+            ['link' => Helper::url('admin?status=4'), 'icon' => 'user-check', 'title' => 'Hoàn thành tiêm chủng'],
+            ['link' => Helper::url('admin?status=-1'), 'icon' => 'user-x', 'title' => 'Từ chối tiêm'],
+            ['link' => Helper::url('admin?status=-2'), 'icon' => 'user-x', 'title' => 'Triệu chứng bất thường'],
         ],
     ],
     [
