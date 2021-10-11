@@ -1,4 +1,5 @@
 <?php
+$_GET['status'] = $_GET['status'] ?? 0;
 if (count($_GET) > 0) {
     $profile = new Profile();
     $profiles = $profile->findAll(['status' => $_GET['status']]);
