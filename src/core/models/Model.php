@@ -25,10 +25,24 @@ abstract class Model
         }
     }
 
-    public function findOne(array $match_cond = null): array|null
+    public function findFirst(array $match_cond = null): mixed
     {
-        $rs = $this->findAll($match_cond);
-        return count($rs) > 0 ? $rs[0] : null;
+        $sql = "select * from $this->_tbl ";
+        $match_query = 'where 1=1 ';
+        if (isset($match_cond)) {
+            foreach ($match_cond as $k => $v) {
+                $match_query .= "and $k = ? ";
+            }
+        }
+        $sql .= $match_query;
+        $sql .= ' limit 1';
+        $stmt = $this->_pdo->prepare($sql);
+        $params = [];
+        if (isset($match_cond)) {
+            $params = array_merge($params, array_values($match_cond));
+        }
+        $stmt->execute(empty($params) ? null : $params);
+        return $stmt->fetch();
     }
 
     public function findAll(array $match_cond = null): array|false
