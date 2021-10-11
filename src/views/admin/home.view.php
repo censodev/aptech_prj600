@@ -3,19 +3,22 @@
         <input hidden name="status" value="<?php echo $_GET['status'] ?>"/>
         <div class="flex-grow-1">
             <small class="text-secondary"><b>Điểm tiêm</b></small>
-            <select class="form-select" name="injectionSite">
-                <option>abc</option>
-                <option>abc</option>
-                <option>abc</option>
+            <select class="form-select" name="injection_site">
+                <option></option>
+                <?php foreach ($injection_sites as $is): ?>
+                    <option value="<?php echo $is['id'] ?>"
+                        <?php echo $is['id'] == $_GET['injection_site'] ? 'selected' : '' ?>>
+                        <?php echo $is['name'] ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div>
             <small class="text-secondary"><b>Thời gian</b></small>
-            <input class="form-control" type="date" name="date"/>
+            <input class="form-control" type="date" name="date" value="<?php echo $_GET['date'] ?>"/>
         </div>
     </div>
     <div class="d-flex gap-2">
-        <input name="s" class="form-control" placeholder="Tìm kiếm">
+        <input name="s" class="form-control" placeholder="Tìm kiếm" value="<?php echo $_GET['s'] ?>"/>
         <button class="btn btn-primary">Lọc</button>
     </div>
 </form>

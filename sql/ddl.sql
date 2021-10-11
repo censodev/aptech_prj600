@@ -102,7 +102,7 @@ create table profiles
     district_id       int           null,
     injection_site_id int           null,
     vaccine_id        int           null,
-    injection_date    datetime      null,
+    injection_date    date          null,
     phone             varchar(20)   null,
     user_id           int           null,
     status            int default 0 null,
