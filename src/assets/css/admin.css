@@ -1,0 +1,5 @@
+.label {
+    font-size: 80%;
+    font-weight: bold;
+    color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+}
