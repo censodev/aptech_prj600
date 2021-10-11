@@ -1,9 +1,25 @@
 <?php
 Helper::adminGuard();
 $navbar = [
-    ['link' => Helper::url('admin'), 'icon' => 'users', 'title' => 'Danh sách đăng ký tiêm'],
-    ['link' => Helper::url('admin/vaccine'), 'icon' => 'box', 'title' => 'Quản lý vaccine'],
-    ['link' => Helper::url('admin/injection-site'), 'icon' => 'home', 'title' => 'Quản lý điểm tiêm'],
+    [
+        'title' => 'Danh sách tiêm chủng',
+        'children' => [
+            ['link' => Helper::url('admin?s=0'), 'icon' => 'users', 'title' => 'Đăng ký tiêm'],
+            ['link' => Helper::url('admin?s=1'), 'icon' => 'users', 'title' => 'Chờ khám'],
+            ['link' => Helper::url('admin?s=2'), 'icon' => 'users', 'title' => 'Chờ tiêm'],
+            ['link' => Helper::url('admin?s=3'), 'icon' => 'users', 'title' => 'Theo dõi sau tiêm'],
+            ['link' => Helper::url('admin?s=4'), 'icon' => 'user-check', 'title' => 'Hoàn thành tiêm chủng'],
+            ['link' => Helper::url('admin?s=-1'), 'icon' => 'user-x', 'title' => 'Từ chối tiêm'],
+            ['link' => Helper::url('admin?s=-2'), 'icon' => 'user-x', 'title' => 'Triệu chứng bất thường'],
+        ],
+    ],
+    [
+        'title' => 'Quản lý vật tư',
+        'children' => [
+            ['link' => Helper::url('admin/vaccine'), 'icon' => 'box', 'title' => 'Vaccine'],
+            ['link' => Helper::url('admin/injection-site'), 'icon' => 'home', 'title' => 'Điểm tiêm'],
+        ],
+    ],
 ];
 ?>
 
@@ -42,12 +58,18 @@ $navbar = [
                 </a>
                 <ul class="sidebar-nav">
                     <?php foreach ($navbar as $nav_item): ?>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="<?php echo $nav_item['link'] ?>">
-                                <i class="align-middle" data-feather="<?php echo $nav_item['icon'] ?>"></i> <span
-                                        class="align-middle"><?php echo $nav_item['title'] ?></span>
-                            </a>
+                        <li class="sidebar-header">
+                            <?php echo $nav_item['title'] ?>
                         </li>
+                        <?php foreach ($nav_item['children'] as $nav_child): ?>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link d-flex" href="<?php echo $nav_child['link'] ?>">
+                                    <i class="align-middle" data-feather="<?php echo $nav_child['icon'] ?>"></i>
+                                    <div
+                                            class="align-middle"><?php echo $nav_child['title'] ?></div>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
                 </ul>
             </div>
