@@ -1,5 +1,9 @@
 <?php
 include_once 'vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+$dotenv->load();
+
 include_once 'src/core/autoload.php';
 
 session_start();
@@ -29,4 +33,3 @@ if (str_contains($controller, 'admin')) {
 } else {
     include_once('src/views/layouts/default.view.php');
 }
-?>

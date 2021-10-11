@@ -18,8 +18,8 @@ abstract class Model
         $this->_key = $this->getKey();
         $this->_tbl = $this->getTable();
         try {
-            $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME;
-            $this->_pdo = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
+            $dsn = 'mysql:host=' . getenv('DB_HOST') . ';port=' . getenv('DB_PORT') . ';dbname=' . getenv('DB_NAME');
+            $this->_pdo = new PDO($dsn, getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
         } catch (PDOException $e) {
             echo "No connection to Database" . $e->getMessage();
         }

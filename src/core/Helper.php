@@ -13,9 +13,9 @@ class Helper
 
     public static function url(string $uri): string
     {
-        $host = APP_HOST;
-        $port = APP_PORT;
-        $context_path = APP_CONTEXT_PATH;
+        $host = getenv('APP_HOST');
+        $port = getenv('APP_PORT');
+        $context_path = getenv('APP_CONTEXT_PATH');
         return empty($context_path)
             ? "http://$host:$port/$uri"
             : "http://$host:$port/$context_path/$uri";
