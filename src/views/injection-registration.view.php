@@ -11,21 +11,6 @@
     <label class="form-check-label personal-infor" for="invalidCheck2">
       Thông tin cá nhân
     </label>
-    <div class="col-12">
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          id="invalidCheck"
-          required
-        />
-        <label class="form-check-label" for="invalidCheck">
-          Đăng ký cho người thân
-        </label>
-      </div>
-    </div>
-
     <div class="col-md-4">
       <label for="validationDefault01">Họ và tên</label>
       <input
@@ -154,95 +139,6 @@
         required
       />
     </div>
-    <div class="col-md-4">
-      <label for="validationDefault01">Địa chỉ ( Hộ khẩu thường trú )</label>
-      <input
-        type="text"
-        class="form-control"
-        id="AddressPermanentResidenceInp"
-        name="address"
-        value=""
-        placeholder="Địa chỉ"
-        required
-      />
-    </div>
-    <div class="col-md-6">
-      <label for="validationDefault02"
-        >Địa chỉ cụ thể ( Hộ khẩu thường trú )</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="SpecificAddressPermanentResidenceInp"
-        name="SpecificAddress"
-        value=""
-        placeholder="Địa chỉ cụ thể"
-        required
-      />
-    </div>
-    <div class="col-md-4">
-      <label for="validationDefault01">Địa chỉ ( Nơi ở hiện tại )</label>
-      <input
-        type="text"
-        class="form-control"
-        id="CurrentAddressInp"
-        name="currentAddress"
-        value=""
-        placeholder="Địa chỉ hiện tại"
-        required
-      />
-    </div>
-    <div class="col-md-6">
-      <label for="validationDefault01">Địa chỉ cụ thể ( Nơi ở hiện tại )</label>
-      <input
-        type="text"
-        class="form-control"
-        id="SpecificCurrentAddressInp"
-        name="SpecificCurrentAddress"
-        value=""
-        placeholder="Địa chỉ hiện tại"
-        required
-      />
-    </div>
-    <label
-      class="form-check-label personal-infor"
-      style="margin-top: 30px"
-      for="invalidCheck2"
-    >
-      Đăng kí tiêm
-    </label>
-    <div class="col-md-4">
-      <label for="validationDefault04">Loại hình (Mở rộng/dịch vụ)</label>
-      <select class="form-select" id="typeOfPatternSlt" required>
-        <option selected disabled value="">Chọn loại hình</option>
-        <option>Tiêm chủng dịch vụ</option>
-        <option>Tiêm chủng mở rộng</option>
-      </select>
-    </div>
-    <div class="col-md-4">
-      <label for="validationDefault03">Chọn loại vaccine</label>
-      <select class="form-select" id="typeOfVaccineSlt" required>
-        <option selected disabled value="">Loại vaccine...</option>
-        <option>Moderna</option>
-        <option>Sinovac</option>
-        <option>Astra Zecera</option>
-        <option>Pfizer</option>
-        <option>Spunik</option>
-        <option>Sinopharm - Sinovax</option>
-      </select>
-    </div>
-    <div class="col-md-4">
-      <label for="validationDefault02">Số thẻ BHYT</label>
-      <input
-        type="text"
-        class="form-control"
-        id="healthInsuranceInp"
-        name="healthInsurance"
-        value=""
-        placeholder="Điền số thẻ BHYT"
-        required
-      />
-    </div>
     <div class="col-md-3">
       <label for="validationDefault04">Tỉnh</label>
       <select class="form-select" id="provinceSlt" required>
@@ -286,6 +182,55 @@
       </select>
     </div>
     <div class="col-md-3">
+      <label for="validationDefault01">Địa chỉ cụ thể</label>
+      <input
+        type="text"
+        class="form-control"
+        id="SpecificCurrentAddressInp"
+        name="SpecificCurrentAddress"
+        value=""
+        placeholder="Địa chỉ hiện tại"
+        required
+      />
+    </div>
+    <label
+      class="form-check-label personal-infor"
+      style="margin-top: 30px"
+      for="invalidCheck2"
+    >
+      Đăng kí tiêm
+    </label>
+    <div class="col-md-3">
+      <label for="validationDefault04">Tỉnh</label>
+      <select class="form-select" id="provinceSlt" required>
+        <option selected disabled value="">Chọn tỉnh, thành phố</option>
+        <option>Hà Nội</option>
+        <option>Hải Phòng</option>
+        <option>Hồ Chí Minh</option>
+        <option>Hà Nội</option>
+        <option>Hải Phòng</option>
+        <option>Hồ Chí Minh</option>
+        <option>Hà Nội</option>
+        <option>Hải Phòng</option>
+        <option>Hồ Chí Minh</option>
+        <option>Hà Nội</option>
+        <option>Hải Phòng</option>
+        <option>Hồ Chí Minh</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="validationDefault03">Quận, huyện</label>
+      <select class="form-select" id="districSlt" required>
+        <option selected disabled value="">Chọn quận, huyện</option>
+        <option>Moderna</option>
+        <option>Sinovac</option>
+        <option>Astra Zecera</option>
+        <option>Pfizer</option>
+        <option>Spunik</option>
+        <option>Sinopharm - Sinovax</option>
+      </select>
+    </div>
+    <div class="col-md-3">
       <label for="validationDefault03">Chọn điểm tiêm</label>
       <select class="form-select" id="communeSlt" required>
         <option selected disabled value="">Chọn điểm tiêm</option>
@@ -297,26 +242,33 @@
         <option>Sinopharm - Sinovax</option>
       </select>
     </div>
+    <div class="col-md-3">
+      <label for="validationDefault05">Ngày tiêm</label>
+      <input
+        type="datetime-local"
+        class="form-control"
+        id="injectionDate"
+        name="birthdaytime"
+      />
+    </div>
   </form>
-      <div class="btn-group">
-        <div class="btn-submit accept">
-          <a href="<?php echo Helper::url('home') ?>">
-          <button
-            class="btn btn-primary"
-            style="background-color: #18bcc7; border: none"
-            type="submit"
-            id="acceptBtn"
-          >
-            Đăng ký
-          </button>
-            </a>
-        </div>
-        <div class="btn-submit cancel">
-          <a href="<?php echo Helper::url('home') ?>">
-            <button class="btn btn-secondary">
-              Hủy bỏ
-            </button>
-            </a>
-        </div>
-      </div>
+  <div class="btn-group">
+    <div class="btn-submit accept">
+      <a href="<?php echo Helper::url('home') ?>">
+        <button
+          class="btn btn-primary"
+          style="background-color: #18bcc7; border: none"
+          type="submit"
+          id="acceptBtn"
+        >
+          Đăng ký
+        </button>
+      </a>
+    </div>
+    <div class="btn-submit cancel">
+      <a href="<?php echo Helper::url('home') ?>">
+        <button class="btn btn-secondary">Hủy bỏ</button>
+      </a>
+    </div>
+  </div>
 </div>

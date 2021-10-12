@@ -26,6 +26,7 @@ Helper::authGuard();
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="logo">
+                <img src="<?php echo Helper::assets('img\9d8ed5_651b6cb038ff4917bcdbe0c58ca2c241_mv2.png') ?>" alt="" srcset="" style="width:100%">
             </div>
             <div class="user-infor" style="position:relative;cursor:pointer">
                 <div class="information" onclick="showLogOut()">
@@ -33,7 +34,7 @@ Helper::authGuard();
                         <p id="phoneNumber" class="phoneNumber" style="margin:8px 0">0987654321</p>
                     </div>
                     <div class="img-user">
-                        <img src="<?php echo Helper::assets('img/default_avatar.svg') ?>" alt="" srcset="">
+                        <i class="fa fa-chevron-down" aria-hidden="true"style="margin:0 5px"></i>
                     </div>
                 </div>
                 <div class="log-out" id="logout" style="
@@ -41,14 +42,14 @@ Helper::authGuard();
                     width:100%;
                     height:50px;
                     margin:9px;
-                    background-color:#18BCC7;
+                    background-color:#ffffff;
                     display:none;
                     border-radius:10px;
                     align-items:center;
                     justify-content:center;
-                    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.51);
+                    box-shadow: 0px 9px 5px -2px rgba(0,0,0,0.21);
                     transition:0.5s">
-                    <a style="color:white; text-decoration:none; font-weight:600;font-size:18px" href="<?php echo Helper::url('logout') ?>">Đăng xuất <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    <a style="color:#323232; text-decoration:none; font-weight:600;font-size:18px;margin:0px 10px" href="<?php echo Helper::url('logout') ?>">Đăng xuất <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 </div>
             </div>
             </div>
