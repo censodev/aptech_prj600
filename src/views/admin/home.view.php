@@ -4,10 +4,9 @@
         <div class="flex-grow-1">
             <small class="text-secondary"><b>Điểm tiêm</b></small>
             <select class="form-select" name="injection_site">
-                <option></option>
                 <?php foreach ($injection_sites as $is): ?>
                     <option value="<?php echo $is['id'] ?>"
-                        <?php echo $is['id'] == $_GET['injection_site'] ? 'selected' : '' ?>>
+                        <?php echo $is['id'] == $_SESSION['injection_site'] ? 'selected' : '' ?>>
                         <?php echo $is['name'] ?></option>
                 <?php endforeach; ?>
             </select>
