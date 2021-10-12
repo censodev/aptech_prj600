@@ -191,20 +191,37 @@
     <?php if ($profile['status'] == ProfileStatus::INJECTED): ?>
         <hr/>
         <h4>Kết quả theo dõi sau tiêm</h4>
+        <form method="post" action="<?php echo Helper::url('admin/profile/failed?id=' . $profile['id']) ?>">
+            <div class="flex-grow-1">
+                <label class="label">Triệu chứng/Dị ứng (nếu có)</label>
+                <textarea class="form-control" name="symptom" rows="5"></textarea>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-2">
+                <button class="btn btn-danger">Ghi nhận phản ứng xấu</button>
+                <a href="<?php echo Helper::url('admin/profile/complete?id=' . $profile['id']) ?>"
+                   class="btn btn-primary">Xác nhận tiêm chủng thành công</a>
+            </div>
+        </form>
+    <?php endif; ?>
+    <?php if ($profile['status'] == ProfileStatus::FAILED || $profile['status'] == ProfileStatus::COMPLETED): ?>
+        <hr/>
+        <h4>Kết quả tiêm chủng</h4>
+        <div class="flex-grow-1">
+            <label class="label">Vaccine được tiêm</label>
+            <select class="form-select" name="vaccine_id" disabled>
+                <option></option>
+                <?php foreach ($vaccines as $v): ?>
+                    <option value="<?php echo $v['id'] ?>"
+                        <?php echo $v['id'] == $profile['vaccine_id'] ? 'selected' : '' ?>>
+                        <?php echo $v['name'] . ' - Lô ' . $v['lot'] ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
         <div class="flex-grow-1">
             <label class="label">Triệu chứng/Dị ứng (nếu có)</label>
-            <textarea class="form-control" name="symptom" rows="5"></textarea>
+            <textarea disabled class="form-control" name="symptom" rows="5"><?php echo $profile['symptom'] ?></textarea>
         </div>
-        <div class="d-flex gap-2 justify-content-center mt-2">
-            <button class="btn btn-danger">Ghi nhận phản ứng xấu</button>
-            <button class="btn btn-primary">Xác nhận tiêm chủng thành công</button>
-        </div>
-    <?php endif; ?>
-    <?php if ($profile['status'] == ProfileStatus::COMPLETED): ?>
-    <?php endif; ?>
-    <?php if ($profile['status'] == ProfileStatus::REJECTED): ?>
-    <?php endif; ?>
-    <?php if ($profile['status'] == ProfileStatus::FAILED): ?>
     <?php endif; ?>
 </div>
 
