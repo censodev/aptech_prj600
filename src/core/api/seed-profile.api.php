@@ -16,6 +16,8 @@ $seed_profiles = [
         'injection_site_id' => 1,
         'injection_date' => date('Y-m-d'),
         'user_id' => 1,
+        'ward_id' => 331,
+        'address' => 'Số XXX, ngõ YY, phố Thịnh Liệt',
     ],
 ];
 if (Helper::seed(new Profile(), $seed_profiles)) {
