@@ -1,28 +1,32 @@
 h4 {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .title {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
 }
 
 .personal-infor {
-    font-weight: 600;
-    font-size: 22px;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .btn-group {
-    width: 100%;
-    justify-content: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .btn-submit {
-    width: auto;
+  width: auto;
 }
 
 .btn {
-    width: 160px;
-    margin: 20px;
+  width: 160px;
+  margin: 20px;
+}
+
+label {
+  font-size: 400;
 }
