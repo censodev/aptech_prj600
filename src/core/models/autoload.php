@@ -5,6 +5,7 @@ include_once 'MasterCountry.php';
 include_once 'MasterDistrict.php';
 include_once 'MasterNation.php';
 include_once 'MasterProvince.php';
+include_once 'MasterWard.php';
 include_once 'Profile.php';
 include_once 'User.php';
 include_once 'Vaccine.php';
