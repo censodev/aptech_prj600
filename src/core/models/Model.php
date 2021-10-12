@@ -108,4 +108,19 @@ abstract class Model
         $stmt = $this->_pdo->prepare($sql);
         $stmt->execute(array_merge($data_values, [$id]));
     }
+
+    public function beginTransaction(): bool
+    {
+        return $this->_pdo->beginTransaction();
+    }
+
+    public function commit(): bool
+    {
+        return $this->_pdo->commit();
+    }
+
+    public function rollback(): bool
+    {
+        return $this->_pdo->rollBack();
+    }
 }

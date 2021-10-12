@@ -1,4 +1,4 @@
-<form method="post" class="d-flex flex-column gap-2">
+<div class="d-flex flex-column gap-2">
     <h4>Thông tin cá nhân</h4>
     <input hidden name="id" value="value="<?php echo $profile['id'] ?>"">
     <div class="d-flex gap-2">
@@ -109,7 +109,10 @@
     </div>
     <?php if ($profile['status'] == ProfileStatus::CREATED): ?>
         <div class="d-flex gap-2 justify-content-center mt-2">
-            <button class="btn btn-primary">Xác nhận đã tới điểm tiêm</button>
+            <a href="<?php echo Helper::url('admin/profile/reject?id=' . $profile['id']) ?>"
+               class="btn btn-danger">Từ chối tiêm</a>
+            <a href="<?php echo Helper::url('admin/profile/check-in?id=' . $profile['id']) ?>"
+               class="btn btn-primary">Xác nhận đã tới điểm tiêm</a>
         </div>
     <?php endif; ?>
     <?php if ($profile['status'] == ProfileStatus::CHECKED_IN): ?>
@@ -131,53 +134,59 @@
         ?>
         <hr/>
         <h4>Khám sàng lọc</h4>
-        <table class="table table-bordered">
-            <?php foreach ($screens as $k => $v): ?>
-                <tr>
-                    <td><?php echo $v ?></td>
-                    <td>
-                        <label class="form-check-label">Không</label>
-                        <input class="form-check-input" type="radio" name="screens[<?php echo $k ?>]" value="0"
-                               checked>
-                    </td>
-                    <td>
-                        <label class="form-check-label">Có</label>
-                        <input class="form-check-input" type="radio" name="screens[<?php echo $k ?>]" value="1">
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
-        <ul>
-            <li>Chống chỉ định tiêm chủng vắc xin cùng loại (Khi <b>CÓ</b> điểm bất thường tại mục 3)</li>
-            <li>Trì hoãn tiêm chủng (Khi <b>CÓ</b> bất kỳ một điểm bất thường tại các mục 1, 4, 5, 6, 7, 8, 9)</li>
-            <li>Chuyển tiêm chủng và theo dõi tại bệnh viện (Khi <b>CÓ</b> tại các mục 2, 10, 11, 12)</li>
-        </ul>
-        <div class="d-flex gap-2 justify-content-center mt-2">
-            <button class="btn btn-danger">Không đủ điều kiện tiêm</button>
-            <button class="btn btn-primary">Xác nhận đủ điều kiện tiêm</button>
-        </div>
+        <form method="post" action="<?php echo Helper::url('admin/profile/screen-test?id=' . $profile['id']) ?>">
+            <table class="table table-bordered">
+                <?php foreach ($screens as $k => $v): ?>
+                    <tr>
+                        <td><?php echo $v ?></td>
+                        <td>
+                            <label class="form-check-label">Không</label>
+                            <input class="form-check-input" type="radio" name="screens[<?php echo $k ?>]" value="0"
+                                   checked>
+                        </td>
+                        <td>
+                            <label class="form-check-label">Có</label>
+                            <input class="form-check-input" type="radio" name="screens[<?php echo $k ?>]" value="1">
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+            <ul>
+                <li>Chống chỉ định tiêm chủng vắc xin cùng loại (Khi <b>CÓ</b> điểm bất thường tại mục 3)</li>
+                <li>Trì hoãn tiêm chủng (Khi <b>CÓ</b> bất kỳ một điểm bất thường tại các mục 1, 4, 5, 6, 7, 8, 9)</li>
+                <li>Chuyển tiêm chủng và theo dõi tại bệnh viện (Khi <b>CÓ</b> tại các mục 2, 10, 11, 12)</li>
+            </ul>
+            <div class="d-flex gap-2 justify-content-center mt-2">
+                <a href="<?php echo Helper::url('admin/profile/reject?id=' . $profile['id']) ?>"
+                   class="btn btn-danger">Không đủ điều kiện tiêm</a>
+                <button class="btn btn-primary">Xác nhận đủ điều kiện tiêm</button>
+            </div>
+        </form>
     <?php endif; ?>
     <?php if ($profile['status'] == ProfileStatus::SCREENED): ?>
         <hr/>
         <h4>Chỉ định vaccine</h4>
-        <div class="d-flex gap-2">
-            <div class="flex-grow-1">
-                <label class="label">Vaccine</label>
-                <select class="form-select" name="vaccine_id" required>
-                    <option></option>
-                    <?php foreach ($vaccines as $v): ?>
-                        <option value="<?php echo $v['id'] ?>"
-                            <?php echo $v['id'] == $profile['vaccine_id'] ? 'selected' : '' ?>>
-                            <?php echo $v['name'] . ' - Lô ' . $v['lot'] . ' - Hạn ' . $v['expire_date'] . ' - Còn ' . ($v['doses'] - $v['consumed_doses']) . ' liều' ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+        <form method="post" action="<?php echo Helper::url('admin/profile/assign-vaccine?id=' . $profile['id']) ?>">
+            <div class="d-flex gap-2">
+                <div class="flex-grow-1">
+                    <label class="label">Vaccine</label>
+                    <select class="form-select" name="vaccine_id" required>
+                        <option></option>
+                        <?php foreach ($vaccines as $v): ?>
+                            <option value="<?php echo $v['id'] ?>"
+                                <?php echo $v['id'] == $profile['vaccine_id'] ? 'selected' : '' ?>>
+                                <?php echo $v['name'] . ' - Lô ' . $v['lot'] . ' - Hạn ' . $v['expire_date'] . ' - Còn ' . ($v['doses'] - $v['consumed_doses']) . ' liều' ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="d-flex gap-2 justify-content-center mt-2">
-            <button class="btn btn-danger">Từ chối tiêm</button>
-            <button class="btn btn-primary">Xác nhận vaccine chỉ định tiêm</button>
-        </div>
+            <div class="d-flex gap-2 justify-content-center mt-2">
+                <a href="<?php echo Helper::url('admin/profile/reject?id=' . $profile['id']) ?>"
+                   class="btn btn-danger">Từ chối tiêm</a>
+                <button class="btn btn-primary">Xác nhận vaccine chỉ định tiêm</button>
+            </div>
+        </form>
     <?php endif; ?>
     <?php if ($profile['status'] == ProfileStatus::INJECTED): ?>
         <hr/>
@@ -197,4 +206,8 @@
     <?php endif; ?>
     <?php if ($profile['status'] == ProfileStatus::FAILED): ?>
     <?php endif; ?>
-</form>
+</div>
+
+<script>
+
+</script>
