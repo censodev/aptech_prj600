@@ -9,7 +9,7 @@ $navbar = [
             ['link' => 'admin/home?status=2', 'icon' => 'users', 'title' => 'Chờ tiêm'],
             ['link' => 'admin/home?status=3', 'icon' => 'users', 'title' => 'Theo dõi sau tiêm'],
             ['link' => 'admin/home?status=4', 'icon' => 'user-check', 'title' => 'Hoàn thành tiêm chủng'],
-            ['link' => 'admin/home?status=-1', 'icon' => 'user-x', 'title' => 'Từ chối tiêm'],
+            ['link' => 'admin/home?status=-1', 'icon' => 'user-x', 'title' => 'Hủy tiêm'],
             ['link' => 'admin/home?status=-2', 'icon' => 'user-x', 'title' => 'Triệu chứng bất thường'],
         ],
     ],

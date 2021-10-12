@@ -3,7 +3,6 @@ $injection_sites = (new InjectionSite())->findAll(['status' => 1]);
 
 $_GET['status'] = $_GET['status'] ?? 0;
 $_GET['date'] = $_GET['date'] ?? date('Y-m-d');
-$_GET['s'] = $_GET['s'] ?? '';
 $_SESSION['injection_site'] = $_GET['injection_site'] ?? $_SESSION['injection_site'] ?? $injection_sites[0]['id'] ?? '';
 
 // TODO: bổ sung query related
