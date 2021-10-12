@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-.card-layout{
+.card-layout {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -49,4 +49,3 @@
     font-weight: 500;
     color: #323232;
 }
-
