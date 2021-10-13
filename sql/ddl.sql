@@ -106,6 +106,10 @@ create table profiles
     phone             varchar(20)   null,
     user_id           int           null,
     status            int default 0 null,
+    ward_id           int           null,
+    address           varchar(100)  null,
+    screen_test       varchar(255)  null,
+    symptom           text          null,
     constraint profiles_id_uindex
         unique (id)
 );
@@ -138,8 +142,8 @@ create table vaccines
     producer       varchar(100) charset utf8 null,
     supplier       varchar(100) charset utf8 null,
     doses          int                       null,
-    consumed_doses int default 0             null,
     expire_date    date                      null,
+    consumed_doses int default 0             null,
     constraint vaccines_id_uindex
         unique (id)
 );
