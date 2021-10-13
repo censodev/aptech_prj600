@@ -8,6 +8,8 @@ if (isset($_GET['phone'])) {
             'phone' => $phone,
         ]);
     }
+    $user_id = ($user->findAll(['phone' => $phone]))[0]['id'];
+    $_SESSION['user_id'] = $user_id;
     $_SESSION['phone'] = $phone;
     echo json_encode(['msg' => 'Đăng nhập thành công']);
 }
