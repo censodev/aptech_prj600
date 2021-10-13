@@ -3,9 +3,7 @@
 <link rel="stylesheet" href="<?php echo Helper::assets('css/admin.css') ?>" />
 
 <div class="container">
-      <div class="title">
-        <h4>Thông tin cá nhân</h4>
-      </div>
+        <h4 style="margin-top:20px">Thông tin cá nhân</h4>
       <form method="post" class="row g-3" style="margin-bottom:20px">
         <div class="col-md-4">
           <label for="validationDefault01">Họ và tên</label>
@@ -42,7 +40,7 @@
                 id="maleRadioBtn"
                 value="1"
                 checked
-                readonly
+                disabled
               />
               <label class="form-check-label" for="inlineRadio1">Nam</label>
             </div>
@@ -54,6 +52,7 @@
                 id="femaleRadioBtn"
                 value="0"
                 readonly
+                disabled
               />
               <label class="form-check-label" for="inlineRadio2">Nữ</label>
             </div>
@@ -65,6 +64,7 @@
                 id="otherRadioBtn"
                 value="2"
                 readonly
+                disabled
               />
               <label class="form-check-label" for="inlineRadio2">Khác</label>
             </div>
@@ -215,6 +215,7 @@
               name="screens[<?php echo $k ?>]"
               value="0"
               checked
+              disabled
             />
           </td>
           <td>
@@ -224,9 +225,29 @@
               type="radio"
               name="screens[<?php echo $k ?>]"
               value="1"
+              disabled
             />
           </td>
         </tr>
         <?php endforeach; ?>
       </table>
+        <h4 style="margin:20px 0">Chỉ định vaccine</h4>
+        <div class="col-md-12">
+          <label for="validationDefault01">Vaccine:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="SpecificCurrentAddressInp"
+            name="address"
+            value=""
+            readonly
+            required
+          />
+        </div>
+        </hr>
+        <h4 style="margin:20px 0">Kết quả theo dõi sau tiêm</h4>
+        <div class="col-md-12" style="margin-bottom: 30px">
+          <label for="validationDefault01">Triệu chứng / Dị ứng (nếu có):</label>
+          <textarea class="form-control" name="symptom" rows="5" readonly style="resize:none"></textarea>
+        </div>
 </div>
