@@ -1,0 +1,232 @@
+<link rel="stylesheet" href="<?php echo Helper::assets("css/injection-registration.css") ?>"
+/>
+<link rel="stylesheet" href="<?php echo Helper::assets('css/admin.css') ?>" />
+
+<div class="container">
+      <div class="title">
+        <h4>Thông tin cá nhân</h4>
+      </div>
+      <form method="post" class="row g-3" style="margin-bottom:20px">
+        <div class="col-md-4">
+          <label for="validationDefault01">Họ và tên</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameInp"
+            name="full_name"
+            value=""
+            readonly
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault02">CMND/CCCD</label>
+          <input
+            type="text"
+            class="form-control"
+            id="idInp"
+            name="identity_card"
+            value=""
+            readonly
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault02">Giới tính</label>
+          <div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="maleRadioBtn"
+                value="1"
+                checked
+                readonly
+              />
+              <label class="form-check-label" for="inlineRadio1">Nam</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="femaleRadioBtn"
+                value="0"
+                readonly
+              />
+              <label class="form-check-label" for="inlineRadio2">Nữ</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="otherRadioBtn"
+                value="2"
+                readonly
+              />
+              <label class="form-check-label" for="inlineRadio2">Khác</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault04">Quốc gia</label>
+          <input
+            type="text"
+            class="form-control"
+            id="countryInp"
+            name="country"
+            value=""
+            readonly
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault03">Dân tộc</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nationInp"
+            name="nation"
+            value=""
+            readonly
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault05">Ngày sinh</label>
+          <input
+            type="text"
+            class="form-control"
+            id="birthdaytime"
+            name="birthday"
+            required
+            readonly
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault02">Số điện thoại</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumberInp"
+            name="phone"
+            value=""
+            readonly
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault01">Nghề nghiệp</label>
+          <input
+            type="text"
+            class="form-control"
+            id="jobInp"
+            name="career"
+            value=""
+            readonly
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault02">Đơn vị công tác</label>
+          <input
+            type="text"
+            class="form-control"
+            id="workplaceInp"
+            name="workspace"
+            value=""
+            readonly
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault04">Tỉnh</label>
+          <input
+            type="text"
+            class="form-control"
+            id="provincesInp"
+            name="provinces"
+            value=""
+            readonly
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault03">Quận, huyện</label>
+          <input
+            type="text"
+            class="form-control"
+            id="districtInp"
+            name="district"
+            value=""
+            readonly
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault03">Xã, phường</label>
+          <input
+            type="text"
+            class="form-control"
+            id="wardInp"
+            name="ward"
+            value=""
+            readonly
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault01">Địa chỉ cụ thể</label>
+          <input
+            type="text"
+            class="form-control"
+            id="SpecificCurrentAddressInp"
+            name="address"
+            value=""
+            readonly
+            required
+          />
+        </div>
+      </form>
+      <?php
+        $screens = [
+            '1. Bệnh cấp tính đang mắc',
+            '2. Tiền sử dị ứng',
+            '3. Tiền sử dị ứng',
+            '4. Tiền sử tiêm vắc xin khác trong 14 ngày qua',
+            '5. Tiền sử bị COVID-19 trong vòng 6 tháng',
+            '6. Tiền sử điều trị huyết tương từ người đã được điều trị khỏi COVID-19 hoặc immunoglobulin trong vòng 90 ngày',
+            '7. Tiền sử suy giảm miễn dịch, ung thư, cắt lách, đang dùng thuốc ức chế miễn dịch, corticoid liều cao (tương đương hoặc hơn 2mg prednisolon/kg/ngày trong ít nhất 7 ngày)',
+            '8. Tiền sử rối loạn đông máu/cầm máu hoặc đang dùng thuốc chống đông',
+            '9. Đang mang thai, phụ nữ đang nuôi con bằng sữa mẹ',
+            '10.Bất thường dấu hiệu sống',
+            '11.Dấu hiệu bất thường khi nghe tim phổi',
+            '12.Rối loạn tri giác',
+        ];
+        ?>
+        <h4>Khám sàng lọc</h4>
+      <table class="table table-bordered" style="margin-top:20px">
+        <?php foreach ($screens as $k =>
+        $v): ?>
+        <tr>
+          <td><?php echo $v ?></td>
+          <td>
+            <label class="form-check-label">Không</label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="screens[<?php echo $k ?>]"
+              value="0"
+              checked
+            />
+          </td>
+          <td>
+            <label class="form-check-label">Có</label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="screens[<?php echo $k ?>]"
+              value="1"
+            />
+          </td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+</div>
