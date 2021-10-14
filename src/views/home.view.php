@@ -53,6 +53,11 @@
                     </div>
                 </div>
             </div>
+            <div class="gen-qr-code" style="width:100%;height:100px;display:flex;justify-content:center;align-item:center">
+                <div class="qr-code" style="width:100px;height:100px;border:1px solid #323232;">
+                <!-- generate QR code  -->
+                </div>
+            </div>
             <div class="card-body d-flex justify-content-around align-items-center">
                 <a href="#"
                    class="btn btn-primary border-0 px-3 py-2"
