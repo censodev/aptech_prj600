@@ -25,9 +25,9 @@ Helper::authGuard();
     <?php if (Helper::isAuthorized()): ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <div class="logo">
+            <a class="logo" href="<?php echo Helper::url('') ?>">
                 <img src="<?php echo Helper::assets('img\9d8ed5_651b6cb038ff4917bcdbe0c58ca2c241_mv2.png') ?>" alt="" srcset="" style="width:100%">
-            </div>
+            </a>
             <div class="user-infor" style="position:relative;cursor:pointer">
                 <div class="information" onclick="showLogOut()">
                     <div class="phoneNumber-infor">

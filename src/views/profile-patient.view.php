@@ -81,7 +81,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="countryInp"
             name="country"
-            value="<?php echo (new MasterCountry())->findById($profile['country_id'])['name'] ?> "
+            value="<?php echo $country?> "
             readonly
             required
           />
@@ -93,7 +93,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="nationInp"
             name="nation"
-            value="<?php echo (new MasterNation())->findById($profile['nation_id'])['name'] ?>"
+            value="<?php echo $nation ?>"
             readonly
             required
           />
@@ -140,7 +140,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="workplaceInp"
             name="workspace"
-            value="<?php  echo $profile['workspace']==Null ? 'Không khai báo': $profile['workspace']?>"
+            value="<?php  echo $profile['workspace'] ?>"
             readonly
           />
         </div>
@@ -151,7 +151,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="provincesInp"
             name="provinces"
-            value="<?php echo (new MasterProvince())->findById($profile['province_id'])['name'] ?>"
+            value="<?php echo $province?>"
             readonly
           />
         </div>
@@ -162,7 +162,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="districtInp"
             name="district"
-            value="<?php echo (new MasterDistrict())->findById($profile['district_id'])['name'] ?>"
+            value="<?php echo $district ?>"
             readonly
           />
         </div>
@@ -173,7 +173,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="wardInp"
             name="ward"
-            value="<?php echo (new MasterWard())->findById($profile['ward_id'])['name'] ?>"
+            value="<?php echo $ward ?>"
             readonly
           />
         </div>
@@ -184,7 +184,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
             class="form-control"
             id="SpecificCurrentAddressInp"
             name="address"
-            value="<?php echo $profile['address']==NULL ? "Không khai báo " : $profile['address']?>"
+            value="<?php echo $profile['address']?>"
             readonly
             required
           />
@@ -206,53 +206,58 @@ echo Helper::assets("css/injection-registration.css") ?>"
             '12.Rối loạn tri giác',
         ];
         ?>
-        <h4>Khám sàng lọc</h4>
-      <table class="table table-bordered" style="margin-top:20px">
-        <?php foreach ($screens as $k =>
-        $v): ?>
-        <tr>
-          <td><?php echo $v ?></td>
-          <td>
-            <label class="form-check-label">Không</label>
+      <?php if (isset($profile['screen_test'])) : ?>
+         
+          <h4>Khám sàng lọc</h4>
+        <table class="table table-bordered" style="margin-top:20px" >
+          <?php foreach ($screens as $k =>
+          $v): ?>
+          <tr>
+            <td><?php echo $v ?></td>
+            <td>
+              <label class="form-check-label">Không</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="screens[<?php echo $k ?>]"
+                value="0"
+                <?php echo $screenTest[$k]==0 ? 'checked':'' ?>
+                disabled
+              />
+            </td>
+            <td>
+              <label class="form-check-label">Có</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="screens[<?php echo $k ?>]"
+                value="1"
+                <?php echo $screenTest[$k]==1 ? 'checked':'' ?>
+                disabled
+              />
+            </td>
+          </tr>
+          <?php endforeach; ?>
+        </table>
+      <?php endif; ?>
+
+          <h4 style="margin:20px 0">Chỉ định vaccine</h4>
+          <div class="col-md-12">
+            <label for="validationDefault01">Vaccine:</label>
             <input
-              class="form-check-input"
-              type="radio"
-              name="screens[<?php echo $k ?>]"
-              value="0"
-              checked
-              disabled
+              type="text"
+              class="form-control"
+              id="SpecificCurrentAddressInp"
+              name="address"
+              value="<?php echo Vaccine::findNameOfVaccineById( $profile['vaccine_id']) ?>"
+              readonly
+              required
             />
-          </td>
-          <td>
-            <label class="form-check-label">Có</label>
-            <input
-              class="form-check-input"
-              type="radio"
-              name="screens[<?php echo $k ?>]"
-              value="1"
-              disabled
-            />
-          </td>
-        </tr>
-        <?php endforeach; ?>
-      </table>
-        <h4 style="margin:20px 0">Chỉ định vaccine</h4>
-        <div class="col-md-12">
-          <label for="validationDefault01">Vaccine:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="SpecificCurrentAddressInp"
-            name="address"
-            value="<?php echo Vaccine::findNameOfVaccineById( $profile['vaccine_id']) ?>"
-            readonly
-            required
-          />
-        </div>
-        </hr>
-        <h4 style="margin:20px 0">Kết quả theo dõi sau tiêm</h4>
-        <div class="col-md-12" style="margin-bottom: 30px">
-          <label for="validationDefault01">Triệu chứng / Dị ứng (nếu có):</label>
-          <textarea class="form-control" name="symptom" rows="5" readonly style="resize:none"></textarea>
-        </div>
+          </div>
+          </hr>
+          <h4 style="margin:20px 0">Kết quả theo dõi sau tiêm</h4>
+          <div class="col-md-12" style="margin-bottom: 30px">
+            <label for="validationDefault01">Triệu chứng / Dị ứng (nếu có):</label>
+            <textarea class="form-control" name="symptom" rows="5" readonly style="resize:none"></textarea>
+          </div>
 </div>
