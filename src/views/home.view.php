@@ -16,41 +16,50 @@
             </div>
         </div>
     </div>
-    <div class="container card-layout py-3">
-        <div class="card" style="width: 404px; border-radius: 10px; margin: 10px">
-            <div class="card-body">
-                <h3 class="card-title" id="username">Bùi Việt Phương</h3>
-                <span class="badge px-3 py-2"
-                      style="border: 2px solid #18bcc7;color: #18bcc7;border-radius: 10px;"
-                      id="status">Đã hoàn thành</span>
-                <div class="person-infor">
-                    <div class="title">
-                        <p>Ngày sinh:</p>
+    <?php foreach ($profiles as $u): ?>
+        <div class="container card-layout py-3">
+            <div class="card" style="width: 404px; border-radius: 10px; margin: 10px">
+                <div class="card-body">
+                    <h3 class="card-title" id="username"><?php echo $u['full_name'] ?></h3>
+                    <span class="badge px-3 py-2"
+                        style="border: 2px solid <?php echo Profile::getColorbyStatus($u['status']) ?>;color:<?php echo Profile::getColorbyStatus($u['status']) ?>;border-radius: 10px;"
+                        id="status"><?php echo Profile::status($u['status'])  ?></span>
+                    <div class="person-infor">
+                        <div class="title">
+                            <p>Ngày tiêm:</p>
+                        </div>
+                        <div class="infor">
+                            <p id="dateOfBirth"><?php echo $u['injection_date'] ?></p>
+                        </div>
                     </div>
-                    <div class="infor">
-                        <p id="dateOfBirth">20/09/2000</p>
+                    <div class="person-infor">
+                        <div class="title">
+                            <p>Tiêm vaccine:</p>
+                        </div>
+                        <div class="infor">
+                            <p id="typeOfVaccine">
+                                <?php echo Vaccine::findNameOfVaccineById( $u['vaccine_id'])  ?>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="person-infor">
+                        <div class="title">
+                            <p>Điểm tiêm:</p>
+                        </div>
+                        <div class="infor">
+                            <p id="injectionAddress">
+                                <?php 
+                                $injectionSites = (new InjectionSite())->findWithJoinByID($u['injection_site_id']);
+                                echo $injectionSites['name'].", ".$injectionSites['district_name'].", ".$injectionSites['province_name'] ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="person-infor">
-                    <div class="title">
-                        <p>Tiêm vaccine:</p>
-                    </div>
-                    <div class="infor">
-                        <p id="typeOfVaccine">
-                            COVID-19 Vaccine Comirnaty (Pfizer) - 0 VND
-                        </p>
-                    </div>
-                </div>
-                <div class="person-infor">
-                    <div class="title">
-                        <p>Điểm tiêm:</p>
-                    </div>
-                    <div class="infor">
-                        <p id="injectionAddress">
-                            Điểm lưu động bệnh viện Xanh Phôn, CDC Hà Nội, CDC Hà Nội, Thành
-                            phố Hà Nội
-                        </p>
-                    </div>
+                <div class="card-body d-flex justify-content-around align-items-center">
+                    <a href=" <?php echo Helper::url('profile-patient ? id='.$u['id']) ?>"
+                    class="btn btn-primary border-0 px-3 py-2"
+                    style="border-radius: 10px;background-color: #18bcc7;"
+                    id="createNextInjectionBtn">Thông tin chi tiết</a>
                 </div>
             </div>
             <div class="gen-qr-code" style="width:100%;height:100px;display:flex;justify-content:center;align-item:center">
@@ -65,5 +74,5 @@
                    id="createNextInjectionBtn">Thông tin chi tiết</a>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
 </div>

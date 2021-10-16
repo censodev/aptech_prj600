@@ -14,7 +14,7 @@ class InjectionSite extends Model
             1 => 'Đang hoạt động',
         };
     }
-
+    
     public function findAllWithJoin(): bool|array
     {
         $sql = "select
@@ -28,4 +28,19 @@ class InjectionSite extends Model
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+   public function findWithJoinByID(int $id): bool|array
+   {
+       $sql = "select
+                   i_s.*,
+                   mp.name province_name,
+                   md.name district_name
+               from injection_sites i_s
+               join master_province mp on mp.id = i_s.province_id
+               join master_district md on i_s.district_id = md.id
+               where i_s.id = ? limit 1";
+       $stmt = $this->_pdo->prepare($sql);
+       $stmt->execute([$id]);
+       return $stmt->fetch();
+   }
 }

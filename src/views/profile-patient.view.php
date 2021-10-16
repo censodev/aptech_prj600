@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="<?php echo Helper::assets("css/injection-registration.css") ?>"
+<link rel="stylesheet" href="<?php
+
+use DASPRiD\Enum\NullValue;
+
+echo Helper::assets("css/injection-registration.css") ?>"
 />
 <link rel="stylesheet" href="<?php echo Helper::assets('css/admin.css') ?>" />
 
@@ -12,7 +16,7 @@
             class="form-control"
             id="nameInp"
             name="full_name"
-            value=""
+            value= "<?php echo $profile['full_name']?>"
             readonly
             required
           />
@@ -24,7 +28,7 @@
             class="form-control"
             id="idInp"
             name="identity_card"
-            value=""
+            value="<?php echo $profile['identity_card']?>"
             readonly
             required
           />
@@ -39,8 +43,8 @@
                 name="gender"
                 id="maleRadioBtn"
                 value="1"
-                checked
-                disabled
+                <?php echo $profile['gender'] == 1 ?'checked' :'reaonly' ?>
+                <?php echo $profile['gender'] == 1 ?'visible' :'disabled' ?>
               />
               <label class="form-check-label" for="inlineRadio1">Nam</label>
             </div>
@@ -51,8 +55,8 @@
                 name="gender"
                 id="femaleRadioBtn"
                 value="0"
-                readonly
-                disabled
+                <?php echo $profile['gender'] == 0?'checked' :'reaonly' ?>
+                <?php echo $profile['gender'] == 0 ?'visible' :'disabled' ?>
               />
               <label class="form-check-label" for="inlineRadio2">Nữ</label>
             </div>
@@ -63,8 +67,8 @@
                 name="gender"
                 id="otherRadioBtn"
                 value="2"
-                readonly
-                disabled
+                <?php echo $profile['gender'] == 2?'checked' :'reaonly' ?>
+                <?php echo $profile['gender'] == 2 ?'visible' :'disabled' ?>
               />
               <label class="form-check-label" for="inlineRadio2">Khác</label>
             </div>
@@ -77,7 +81,7 @@
             class="form-control"
             id="countryInp"
             name="country"
-            value=""
+            value="<?php echo (new MasterCountry())->findById($profile['country_id'])['name'] ?> "
             readonly
             required
           />
@@ -89,7 +93,7 @@
             class="form-control"
             id="nationInp"
             name="nation"
-            value=""
+            value="<?php echo (new MasterNation())->findById($profile['nation_id'])['name'] ?>"
             readonly
             required
           />
@@ -101,6 +105,7 @@
             class="form-control"
             id="birthdaytime"
             name="birthday"
+            value="<?php echo $profile['birthday'] ?>"
             required
             readonly
           />
@@ -112,7 +117,7 @@
             class="form-control"
             id="phoneNumberInp"
             name="phone"
-            value=""
+            value="<?php echo $profile['phone'] ?>"
             readonly
             required
           />
@@ -124,7 +129,7 @@
             class="form-control"
             id="jobInp"
             name="career"
-            value=""
+            value="<?php echo $profile['career'] ?>"
             readonly
           />
         </div>
@@ -135,7 +140,7 @@
             class="form-control"
             id="workplaceInp"
             name="workspace"
-            value=""
+            value="<?php  echo $profile['workspace']==Null ? 'Không khai báo': $profile['workspace']?>"
             readonly
           />
         </div>
@@ -146,7 +151,7 @@
             class="form-control"
             id="provincesInp"
             name="provinces"
-            value=""
+            value="<?php echo (new MasterProvince())->findById($profile['province_id'])['name'] ?>"
             readonly
           />
         </div>
@@ -157,7 +162,7 @@
             class="form-control"
             id="districtInp"
             name="district"
-            value=""
+            value="<?php echo (new MasterDistrict())->findById($profile['district_id'])['name'] ?>"
             readonly
           />
         </div>
@@ -168,7 +173,7 @@
             class="form-control"
             id="wardInp"
             name="ward"
-            value=""
+            value="<?php echo (new MasterWard())->findById($profile['ward_id'])['name'] ?>"
             readonly
           />
         </div>
@@ -179,7 +184,7 @@
             class="form-control"
             id="SpecificCurrentAddressInp"
             name="address"
-            value=""
+            value="<?php echo $profile['address']==NULL ? "Không khai báo " : $profile['address']?>"
             readonly
             required
           />
@@ -239,7 +244,7 @@
             class="form-control"
             id="SpecificCurrentAddressInp"
             name="address"
-            value=""
+            value="<?php echo Vaccine::findNameOfVaccineById( $profile['vaccine_id']) ?>"
             readonly
             required
           />
