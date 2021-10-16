@@ -1,0 +1,1 @@
+<?php echo include_once Helper::view('vaccine-passport'); ?>
