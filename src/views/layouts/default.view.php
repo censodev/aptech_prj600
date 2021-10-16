@@ -31,7 +31,7 @@ Helper::authGuard();
             <div class="user-infor" style="position:relative;cursor:pointer">
                 <div class="information" onclick="showLogOut()">
                     <div class="phoneNumber-infor">
-                        <p id="phoneNumber" class="phoneNumber" style="margin:8px 0">0987654321</p>
+                        <p id="phoneNumber" class="phoneNumber" style="margin:8px 0"><?php echo Helper::session('phone') ?></p>
                     </div>
                     <div class="img-user">
                         <i class="fa fa-chevron-down" aria-hidden="true"style="margin:0 5px"></i>
