@@ -38,7 +38,7 @@ class Helper
 
     public static function authGuard(): void
     {
-        if (self::isAuthorized() || str_contains($_GET['url'], 'login')) {
+        if (self::isAuthorized() || str_contains($_GET['url'], 'login') || str_contains($_GET['url'], 'vaccine-passport')) {
             return;
         }
         self::redirectLogin();
