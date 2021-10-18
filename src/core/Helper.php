@@ -33,7 +33,7 @@ class Helper
 
     public static function isAdmin(): bool
     {
-        return self::isAuthorized() && isset($_SESSION['isAdmin']);
+        return self::isAuthorized() && isset($_SESSION['is_admin']);
     }
 
     public static function authGuard(): void
