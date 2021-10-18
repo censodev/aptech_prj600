@@ -249,7 +249,7 @@ echo Helper::assets("css/injection-registration.css") ?>"
               class="form-control"
               id="SpecificCurrentAddressInp"
               name="address"
-              value="<?php echo Vaccine::findNameOfVaccineById( $profile['vaccine_id']) ?>"
+              value="<?php echo $vaccine ?>"
               readonly
               required
             />

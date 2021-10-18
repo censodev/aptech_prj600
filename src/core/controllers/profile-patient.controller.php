@@ -1,6 +1,8 @@
 <?php
     $profile = (new Profile())->findById($_GET['id']);
 
+    $vaccine =$profile['vacciine_id']==NULL? "Chưa chỉ định" :(new Vaccine())->findById($profile['vacciine_id'])['name'];
+
     $screenTest = json_decode($profile['screen_test']);
 
     $country =(new MasterCountry())->findById($profile['country_id'])['name'];

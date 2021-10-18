@@ -68,8 +68,8 @@
                       <tr>
                           <td><?php static  $i =1; echo $i++?></td>
                           <td><?php echo $u['injection_date']?></td>
-                          <td><?php echo Vaccine::findNameOfVaccineById($u['vaccine_id']) ?></td>
-                          <td> <?php echo InjectionSite::getFullyInjectionSiteByProfile($u) ?></td>
+                          <td><<?php $u['vaccine_id']== NULL ?"Chưa chỉ định":$vaccine =(new Vaccine())->findById($u['vaccine_id'])['name']?></td>
+                          <td><?php echo InjectionSite::getFullyInjectionSiteByProfile($u) ?></td>
                       </tr>
                       <?php endforeach; ?>
                       </tbody>
