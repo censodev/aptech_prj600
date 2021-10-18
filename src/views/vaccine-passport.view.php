@@ -50,7 +50,7 @@
               </div>
               <div class="col-12 infor">
                 <label>Kết luận:</label>
-                <span id="address"><?php echo $profile['status']==4 ?  'Đã được tiêm vaccine phòng bệnh COVID-19':'Chưa được tiêm vaccine' ?></span>
+                <span id="address"><?php echo !empty($profiles) ?  'Đã được tiêm vaccine phòng bệnh COVID-19':'Chưa được tiêm vaccine' ?></span>
               </div>
             </div>
               <div class="mw-100 overflow-auto">

@@ -258,6 +258,6 @@ echo Helper::assets("css/injection-registration.css") ?>"
           <h4 style="margin:20px 0">Kết quả theo dõi sau tiêm</h4>
           <div class="col-md-12" style="margin-bottom: 30px">
             <label for="validationDefault01">Triệu chứng / Dị ứng (nếu có):</label>
-            <textarea class="form-control" name="symptom" rows="5" readonly style="resize:none"></textarea>
+            <textarea class="form-control" name="symptom" rows="5" readonly style="resize:none"><?php echo $profile['symptom'] ?? '' ?></textarea>
           </div>
 </div>
