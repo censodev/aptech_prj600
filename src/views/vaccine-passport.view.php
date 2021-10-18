@@ -12,7 +12,7 @@
     >
     <?php if($profile == NULL): ?><h3>Không tồn tại dữ liệu</h3>
     <?php else : ?>
-        <div class="infor" style="height: fit-content;margin-top: 50px;">
+        <div class="infor">
           <div class="container">
             <div class="row">
               <div class="col"><p>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p></div>
