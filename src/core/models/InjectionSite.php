@@ -43,4 +43,10 @@ class InjectionSite extends Model
        $stmt->execute([$id]);
        return $stmt->fetch();
    }
+
+   public static function getFullyInjectionSiteByProfile($profile): string
+   {
+   $injectionSites = (new InjectionSite())->findWithJoinByID($profile['injection_site_id']);
+   return  $injectionSites['name'] . ", " . $injectionSites['district_name'] . ", " . $injectionSites['province_name'];
+   }
 }
