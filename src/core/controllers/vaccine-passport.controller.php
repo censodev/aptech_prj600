@@ -1,6 +1,7 @@
 <?php
     $profile = (new Profile())->findFirst(['identity_card' => $_GET['identity_card']]);
     if( $profile != NULL){
+
     $country =(new MasterCountry())->findById($profile['country_id'])['name'];
 
     $nation =(new MasterNation())->findById($profile['nation_id'])['name'];

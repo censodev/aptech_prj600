@@ -38,7 +38,7 @@
                         </div>
                         <div class="infor">
                             <p id="typeOfVaccine">
-                                <?php echo Vaccine::findNameOfVaccineById($u['vaccine_id']) ?>
+                                <?php echo $u['vaccine_id']== NULL ?"Chưa chỉ định":$vaccine =(new Vaccine())->findById($u['vaccine_id'])['name']; ?>
                             </p>
                         </div>
                     </div>
