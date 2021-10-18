@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 if (count($_POST) > 0) {
     $user = new User();
     $u = $user->findFirst(['phone' => $_POST['phone']]);

@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 if (isset($_GET['phone'])) {
     $phone = $_GET['phone'];
     $user = new User();
