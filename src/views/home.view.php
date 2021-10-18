@@ -55,16 +55,16 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <?php if ($u['status'] == ProfileStatus::COMPLETED): ?>
-                    <img src="<?php echo $qr->generate(Helper::url('vaccine-passport?id=' . $u['identity_card']))->getDataUri() ?>"
-                         class="qr-code align-self-center" style="width:100px;height:100px"/>
-                <?php endif; ?>
-                <div class="card-body d-flex justify-content-around align-items-center">
-                    <a href=" <?php echo Helper::url('profile-patient?id=' . $u['id']) ?>"
-                       class="btn btn-primary border-0 px-3 py-2"
-                       style="border-radius: 10px;background-color: #18bcc7;"
-                       id="createNextInjectionBtn">Thông tin chi tiết</a>
+                    <?php if ($u['status'] == ProfileStatus::COMPLETED): ?>
+                        <img src="<?php echo $qr->generate(Helper::url('vaccine-passport?id=' . $u['identity_card']))->getDataUri() ?>"
+                             class="qr-code align-self-center" style="width:100px;height:100px"/>
+                    <?php endif; ?>
+                    <div class="d-flex align-content-end">
+                        <a href=" <?php echo Helper::url('profile-patient?id=' . $u['id']) ?>"
+                           class="btn btn-primary border-0 px-3 py-2"
+                           style="border-radius: 10px;background-color: #18bcc7;"
+                           id="createNextInjectionBtn">Thông tin chi tiết</a>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
