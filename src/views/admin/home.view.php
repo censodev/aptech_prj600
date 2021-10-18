@@ -12,7 +12,7 @@
     </div>
     <div>
         <small class="text-secondary"><b>Thời gian</b></small>
-        <input class="form-control" type="date" name="date" value="<?php echo $_GET['date'] ?>"/>
+        <input class="form-control" type="date" name="date" value="<?php echo $_SESSION['injection_date'] ?>"/>
     </div>
     <button class="btn btn-primary">
         <i data-feather="search"></i>
