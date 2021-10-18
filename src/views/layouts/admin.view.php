@@ -34,7 +34,7 @@ $navbar = [
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="<?php echo Helper::assets('img/9d8ed5_651b6cb038ff4917bcdbe0c58ca2c241_mv2.png') ?>"/>
 
-    <title>VMS | Admin</title>
+    <title>CV19VIMS | Admin</title>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
