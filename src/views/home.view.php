@@ -16,8 +16,9 @@
             </div>
         </div>
     </div>
-    <?php foreach ($profiles as $u): ?>
-        <div class="container card-layout py-3">
+
+    <div class="container card-layout py-3">
+        <?php foreach ($profiles as $u): ?>
             <div class="card" style="width: 404px; border-radius: 10px; margin: 10px">
                 <div class="card-body">
                     <h3 class="card-title" id="username"><?php echo $u['full_name'] ?></h3>
@@ -66,6 +67,6 @@
                        id="createNextInjectionBtn">Thông tin chi tiết</a>
                 </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
 </div>
