@@ -12,6 +12,6 @@
 
     $province = (new MasterProvince())->findById($profile['province_id'])['name'] ;
 
-    $profiles = (new Profile())->findAll(['identity_card' => $_GET['id']]);
+    $profiles = (new Profile())->findAll(['identity_card' => $_GET['id'], 'status' => ProfileStatus::COMPLETED]);
     }
 include_once Helper::view('vaccine-passport');?>
