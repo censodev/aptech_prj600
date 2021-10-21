@@ -189,15 +189,18 @@
     <?php if ($profile['status'] == ProfileStatus::INJECTED): ?>
         <hr/>
         <h4>Kết quả theo dõi sau tiêm</h4>
-        <form method="post" action="<?php echo Helper::url('admin/profile/failed?id=' . $profile['id']) ?>">
+        <form method="post" action="<?php echo Helper::url('admin/profile/complete?id=' . $profile['id']) ?>">
             <div class="flex-grow-1">
                 <label class="label">Triệu chứng/Dị ứng (nếu có)</label>
                 <textarea class="form-control" name="symptom" rows="5"></textarea>
             </div>
+            <div class="form-check form-check-inline mt-2">
+                <input class="form-check-input" type="checkbox" name="have_appointment" value="1" checked>
+                <label class="form-check-label">Hẹn tiêm sau 30 ngày</label>
+            </div>
             <div class="d-flex gap-2 justify-content-center mt-2">
-                <button class="btn btn-danger">Ghi nhận phản ứng xấu</button>
-                <a href="<?php echo Helper::url('admin/profile/complete?id=' . $profile['id']) ?>"
-                   class="btn btn-primary">Xác nhận tiêm chủng thành công</a>
+                <button class="btn btn-danger" name="action" value="-1">Ghi nhận phản ứng xấu</button>
+                <button class="btn btn-primary" name="action" value="1">Xác nhận tiêm chủng thành công</button>
             </div>
         </form>
     <?php endif; ?>

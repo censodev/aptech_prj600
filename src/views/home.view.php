@@ -37,6 +37,14 @@
                             </div>
                             <div class="person-infor">
                                 <div class="title">
+                                    <p>Hẹn tiêm:</p>
+                                </div>
+                                <div class="infor">
+                                    <p id="dateOfBirth" class="mb-0"><?php echo $u['appointment_date'] ?? 'Không' ?></p>
+                                </div>
+                            </div>
+                            <div class="person-infor">
+                                <div class="title">
                                     <p>Tiêm vaccine:</p>
                                 </div>
                                 <div class="infor">

@@ -110,6 +110,7 @@ create table profiles
     address           varchar(100)  null,
     screen_test       varchar(255)  null,
     symptom           text          null,
+    appointment_date  date          null,
     constraint profiles_id_uindex
         unique (id)
 );
