@@ -256,8 +256,13 @@ echo Helper::assets("css/injection-registration.css") ?>"
           </div>
           </hr>
           <h4 style="margin:20px 0">Kết quả theo dõi sau tiêm</h4>
-          <div class="col-md-12" style="margin-bottom: 30px">
+          <form method="post" action="<?php echo Helper::url('profile-patient-complete?id=' . $profile['id']) ?>">
             <label for="validationDefault01">Triệu chứng / Dị ứng (nếu có):</label>
-            <textarea class="form-control" name="symptom" rows="5" readonly style="resize:none"><?php echo $profile['symptom'] ?? '' ?></textarea>
-          </div>
+            <textarea  class="form-control" name="symptom" rows="5" <?php echo  $profile['status']==ProfileStatus::COMPLETED? "visible": 'disabled' ?> style="resize:none"><?php echo $profile['symptom'] ?? '' ?></textarea>
+            <?php if ($profile['status']==ProfileStatus::COMPLETED) : ?>
+              <div class="d-flex gap-2 justify-content-center mt-2" visibility="hidden" > 
+                  <button class="btn btn-primary" name="action" value="1" >Cập nhật triệu chứng</button>
+              </div>
+            <?php endif; ?>
+          </form>
 </div>
