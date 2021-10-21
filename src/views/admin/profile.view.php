@@ -151,15 +151,13 @@
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <ul>
-                <li>Chống chỉ định tiêm chủng vắc xin cùng loại (Khi <b>CÓ</b> điểm bất thường tại mục 3)</li>
-                <li>Trì hoãn tiêm chủng (Khi <b>CÓ</b> bất kỳ một điểm bất thường tại các mục 1, 4, 5, 6, 7, 8, 9)</li>
-                <li>Chuyển tiêm chủng và theo dõi tại bệnh viện (Khi <b>CÓ</b> tại các mục 2, 10, 11, 12)</li>
-            </ul>
+<!--            <ul>-->
+<!--                <li>Chống chỉ định tiêm chủng vắc xin cùng loại (Khi <b>CÓ</b> điểm bất thường tại mục 3)</li>-->
+<!--                <li>Trì hoãn tiêm chủng (Khi <b>CÓ</b> bất kỳ một điểm bất thường tại các mục 1, 4, 5, 6, 7, 8, 9)</li>-->
+<!--                <li>Chuyển tiêm chủng và theo dõi tại bệnh viện (Khi <b>CÓ</b> tại các mục 2, 10, 11, 12)</li>-->
+<!--            </ul>-->
             <div class="d-flex gap-2 justify-content-center mt-2">
-                <a href="<?php echo Helper::url('admin/profile/reject?id=' . $profile['id']) ?>"
-                   class="btn btn-danger">Không đủ điều kiện tiêm</a>
-                <button class="btn btn-primary">Xác nhận đủ điều kiện tiêm</button>
+                <button class="btn btn-primary">Cập nhật kết quả khám sàng lọc</button>
             </div>
         </form>
     <?php endif; ?>
