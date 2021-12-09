@@ -1,7 +1,13 @@
 <form method="post" class="d-flex flex-column gap-2">
-    <div class="flex-grow-1">
-        <label class="label">Tên vaccine</label>
-        <input class="form-control" name="name">
+    <div class="d-flex gap-2">
+        <div class="flex-grow-1">
+            <label class="label">Tên vaccine</label>
+            <input class="form-control" name="name">
+        </div>
+        <div>
+            <label class="label">Số ngày hẹn tiêm</label>
+            <input class="form-control" name="appointment_days" type="number">
+        </div>
     </div>
     <div class="d-flex gap-2">
         <div class="flex-grow-1">

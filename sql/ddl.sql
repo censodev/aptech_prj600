@@ -137,14 +137,15 @@ alter table users
 
 create table vaccines
 (
-    id             int auto_increment,
-    name           varchar(200) charset utf8 null,
-    lot            varchar(20) charset utf8  null,
-    producer       varchar(100) charset utf8 null,
-    supplier       varchar(100) charset utf8 null,
-    doses          int                       null,
-    expire_date    date                      null,
-    consumed_doses int default 0             null,
+    id               int auto_increment,
+    name             varchar(200) charset utf8 null,
+    lot              varchar(20) charset utf8  null,
+    producer         varchar(100) charset utf8 null,
+    supplier         varchar(100) charset utf8 null,
+    doses            int                       null,
+    consumed_doses   int default 0             null,
+    expire_date      date                      null,
+    appointment_days int                       null,
     constraint vaccines_id_uindex
         unique (id)
 );

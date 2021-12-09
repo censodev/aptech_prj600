@@ -9,6 +9,7 @@
         <th>Ngày hết hạn</th>
         <th>Nhà sản xuất</th>
         <th>Nhà cung cấp</th>
+        <th>Số ngày hẹn tiêm</th>
         <th>Thao tác</th>
     </tr>
     </thead>
@@ -22,6 +23,7 @@
             <td><?php echo $v['expire_date'] ?></td>
             <td><?php echo $v['producer'] ?></td>
             <td><?php echo $v['supplier'] ?></td>
+            <td><?php echo $v['appointment_days'] ?></td>
             <td>
                 <a href="<?php echo Helper::url('admin/vaccine-update?id=' . $v['id']) ?>" class="btn btn-primary">
                     <i data-feather="edit"></i>
