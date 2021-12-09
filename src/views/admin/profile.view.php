@@ -196,7 +196,7 @@
             </div>
             <div class="form-check form-check-inline mt-2">
                 <input class="form-check-input" type="checkbox" name="have_appointment" value="1" checked>
-                <label class="form-check-label">Hẹn tiêm sau 30 ngày</label>
+                <label class="form-check-label">Hẹn tiêm</label>
             </div>
             <div class="d-flex gap-2 justify-content-center mt-2">
                 <button class="btn btn-danger" name="action" value="-1">Ghi nhận phản ứng xấu</button>

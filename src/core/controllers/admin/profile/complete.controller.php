@@ -5,8 +5,8 @@ if ($_POST['action'] == 1) {
         $vaccine = (new Vaccine())->findById($profile['vaccine_id']);
         $days = $vaccine['appointment_days'];
         $appointment_date = is_null($days)
-            ? date('Y-m-d', strtotime("+$days days"))
-            : null;
+            ? null
+            : date('Y-m-d', strtotime("+$days days"));
     } else {
         $appointment_date = null;
     }
